@@ -1,9 +1,8 @@
 .logo-contact {
     position:fixed;
     right:15px;
-    top:5vh;
-    height:150px;
-    width:150px;
+    top:15px;
+    width:100px;
     opacity:0;
     img {width:75%; float:right;}
     z-index:100;
@@ -19,5 +18,5 @@
     line-height:1.325;
     position:fixed;
     left:15px;
-    top:7vh;
+    top:15px;
 }

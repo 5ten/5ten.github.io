@@ -18,14 +18,14 @@
     position:fixed;
     display:block;
     height:100vh;
-    width:100vw;
+    width:100%;
     top:0;
     left:0;
     z-index:1;
     border-left:15px solid $fiveWhite;
     border-right:15px solid $fiveWhite;
     border-bottom:15px solid $fiveWhite;
-    border-top:20vh solid $fiveWhite;
+    border-top:75px solid $fiveWhite;
     .inner {
         position:relative;
         width:100%;
@@ -36,13 +36,13 @@
         background:$fiveBlack;
     }
     .top {
-        height:10px;
+        height:5px;
         top:0;
         left:0;
         @include animation(bottomExpand 1s ease-in-out 1s forwards);
     }
     .bottom {
-        height:10px;
+        height:5px;
         bottom:0;
         right:0;
         @include animation(bottomExpand 1s ease-in-out 1s forwards);
@@ -52,14 +52,14 @@
         height:0;
         top:0;
         left:0;
-        width:10px;
+        width:5px;
         bottom:0;
     }
     .right {
         @include animation(sideExpand 1s ease-in-out 1s forwards);
         height:0;
         right:0;
-        width:10px;
+        width:5px;
         bottom:0;
     }
 }

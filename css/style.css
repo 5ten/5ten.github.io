@@ -417,14 +417,14 @@ input[type="submit"]:hover {
   position: fixed;
   display: block;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 1;
   border-left: 15px solid #F8F8F8;
   border-right: 15px solid #F8F8F8;
   border-bottom: 15px solid #F8F8F8;
-  border-top: 20vh solid #F8F8F8;
+  border-top: 75px solid #F8F8F8;
 }
 .bars .inner {
   position: relative;
@@ -436,7 +436,7 @@ input[type="submit"]:hover {
   background: #1D1F21;
 }
 .bars .top {
-  height: 10px;
+  height: 5px;
   top: 0;
   left: 0;
   -webkit-animation: bottomExpand 1s ease-in-out 1s forwards;
@@ -444,7 +444,7 @@ input[type="submit"]:hover {
   animation: bottomExpand 1s ease-in-out 1s forwards;
 }
 .bars .bottom {
-  height: 10px;
+  height: 5px;
   bottom: 0;
   right: 0;
   -webkit-animation: bottomExpand 1s ease-in-out 1s forwards;
@@ -458,7 +458,7 @@ input[type="submit"]:hover {
   height: 0;
   top: 0;
   left: 0;
-  width: 10px;
+  width: 5px;
   bottom: 0;
 }
 .bars .right {
@@ -467,7 +467,7 @@ input[type="submit"]:hover {
   animation: sideExpand 1s ease-in-out 1s forwards;
   height: 0;
   right: 0;
-  width: 10px;
+  width: 5px;
   bottom: 0;
 }
 
@@ -639,9 +639,8 @@ body {
 .logo-contact {
   position: fixed;
   right: 15px;
-  top: 5vh;
-  height: 150px;
-  width: 150px;
+  top: 15px;
+  width: 100px;
   opacity: 0;
   z-index: 100;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
@@ -663,7 +662,7 @@ body {
   line-height: 1.325;
   position: fixed;
   left: 15px;
-  top: 7vh;
+  top: 15px;
 }
 
 .contact-modal {
