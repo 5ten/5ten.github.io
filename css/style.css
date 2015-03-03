@@ -87,14 +87,14 @@ input, select {
 
 body {
   color: #1D1F21;
-  font-family: "proxima-nova";
+  font-family: "open-sans";
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   line-height: 1.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "proxima-nova";
+  font-family: "open-sans";
   line-height: 1.25em;
   margin: 0;
   text-rendering: optimizeLegibility;
@@ -200,7 +200,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "proxima-nova";
+  font-family: "open-sans";
   font-size: 1em;
 }
 
@@ -225,7 +225,7 @@ select[multiple=multiple] {
   border-radius: 0;
   color: #1D1F21;
   background: #F8F8F8;
-  font-family: "proxima-nova";
+  font-family: "open-sans";
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em 1.125em;
