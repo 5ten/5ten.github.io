@@ -61,5 +61,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['sass', 'watch']);
+  grunt.registerTask('bower', ['bower_concat', 'wiredep']);
 };
 
