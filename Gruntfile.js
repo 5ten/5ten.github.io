@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
     bower_concat: {
       all: {
-        dest: 'scripts/_bower.js',
+        dest: 'scripts/bower.js',
         cssDest: '_bower.css',
         exclude: [
             'jquery',
