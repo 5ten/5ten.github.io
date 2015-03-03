@@ -1,0 +1,23 @@
+.logo-contact {
+    position:fixed;
+    right:15px;
+    top:5vh;
+    height:150px;
+    width:150px;
+    opacity:0;
+    img {width:75%; float:right;}
+    z-index:100;
+    @include animation(fadeIn 1s ease-in 2.25s forwards);
+    h1 {
+        position:absolute;
+        opacity:0;
+    }
+}
+.contact {
+    font-size:.8em;
+    text-align:center;
+    line-height:1.325;
+    position:fixed;
+    left:15px;
+    top:7vh;
+}

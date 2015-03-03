@@ -1,0 +1,37 @@
+.second-deck .copy {-skrollr-animation-name:secondDeck_Copy;}
+@-skrollr-keyframes secondDeck_Copy {
+    skrollr-#{300-top} {
+    }
+    skrollr-#{bottom-top} {
+        opacity:0;
+    }
+    skrollr-#{center} {
+        opacity:1;
+    }
+    skrollr-#{700-center} {
+        opacity:1;
+    }
+    skrollr-#{top-bottom} {
+        opacity:0;
+    }
+}
+.second-deck .cover{-skrollr-animation-name:secondDeck_Cover;}
+@-skrollr-keyframes secondDeck_Cover {
+    skrollr-#{bottom-top} {
+        height:100%;
+    }
+    skrollr-#{center} {
+        height:0%;
+    }
+}
+.second-deck .background {-skrollr-animation-name:secondDeck_Background;}
+@-skrollr-keyframes secondDeck_Background {
+    skrollr-#{500-top} {
+        width:120%;
+        height:120%
+    }
+    skrollr-#{-500-bottom} {
+        width:100%;
+        height:100%
+    }
+}

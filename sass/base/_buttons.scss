@@ -1,0 +1,20 @@
+button,
+input[type="submit"] {
+  @extend .button;
+}
+.button {
+    display:inline-block;
+    font-weight:bold;
+    font-size:1.125em;
+    padding:0.5em 1.125em;
+    border:5px solid $fiveBlack;
+    color:$fiveBlack;
+    background:$fiveWhite;
+    cursor:pointer;
+    outline:0;
+    @include transition(all 200ms ease-in-out);
+    &:hover {
+        background:$fiveBlack;
+        color:$fiveWhite;
+    }
+}

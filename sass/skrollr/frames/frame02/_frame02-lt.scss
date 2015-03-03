@@ -1,0 +1,32 @@
+
+.second-deck .copy {
+    opacity:0;
+    position:fixed;
+    width:60vw;
+    left:20vw;
+    top:45vh;
+    padding:5vh;
+    background:white;
+}
+.second-deck .background {
+    width:120%;
+    height:120%;
+    position:fixed;
+    left:0;
+    top:0;
+    background-image:url(../images/placeholder_02.jpg);
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-size:cover;
+
+}
+.second-deck .cover {
+    position:fixed;
+    left:0;
+    top:0;
+    opacity:1;
+    background:$fiveWhite;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}

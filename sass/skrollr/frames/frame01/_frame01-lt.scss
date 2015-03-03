@@ -1,0 +1,18 @@
+.first-deck {
+    position:relative;
+    z-index:10;
+}
+.first-deck .frame {
+    @include size(100% 150%);
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+}
+.first-deck .copy {
+    position:fixed;
+    width:60vw;
+    left:20vw;
+    top:45vh;
+    opacity:1;
+}
