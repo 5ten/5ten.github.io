@@ -566,6 +566,18 @@ body {
   height: 300vh;
 }
 
+#anchor03 {
+  height: 500vh;
+}
+
+#anchor03-01 {
+  height: 200vh;
+}
+
+#anchor03-02 {
+  height: 300vh;
+}
+
 .first-deck {
   position: relative;
   z-index: 10;
@@ -670,6 +682,83 @@ body {
 }
 
 @-skrollr-keyframes secondDeck_Background {
+  skrollr-500-top {
+    width: 120%;
+    height: 120%;
+  }
+  skrollr--500-bottom {
+    width: 100%;
+    height: 100%;
+  }
+}
+.third-deck .copy {
+  opacity: 0;
+  position: fixed;
+  width: 60vw;
+  left: 20vw;
+  top: 45vh;
+  padding: 5vh;
+  background: white;
+}
+
+.third-deck .background {
+  width: 120%;
+  height: 120%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-image: url(../images/placeholder_03.jpg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+}
+
+.third-deck .cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  background: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.third-deck .copy {
+  -skrollr-animation-name: thirdDeck_Copy;
+}
+
+@-skrollr-keyframes thirdDeck_Copy {
+  skrollr-bottom-top {
+    opacity: 0;
+  }
+  skrollr-center {
+    opacity: 1;
+  }
+  skrollr-700-center {
+    opacity: 1;
+  }
+  skrollr-top-bottom {
+    opacity: 0;
+  }
+}
+.third-deck .cover {
+  -skrollr-animation-name: thirdDeck_Cover;
+}
+
+@-skrollr-keyframes thirdDeck_Cover {
+  skrollr-bottom-top {
+    height: 100%;
+  }
+  skrollr-center {
+    height: 0%;
+  }
+}
+.third-deck .background {
+  -skrollr-animation-name: thirdDeck_Background;
+}
+
+@-skrollr-keyframes thirdDeck_Background {
   skrollr-500-top {
     width: 120%;
     height: 120%;
