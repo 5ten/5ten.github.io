@@ -325,8 +325,8 @@ dl dd {
 .button, button,
 input[type="submit"] {
   display: inline-block;
-  font-weight: bold;
-  font-size: 1.125em;
+  font-size: .9em;
+  text-transform: uppercase;
   padding: 0.5em 1.125em;
   border: 5px solid #1D1F21;
   color: #1D1F21;
