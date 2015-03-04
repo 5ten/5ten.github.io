@@ -578,6 +578,50 @@ body {
   height: 300vh;
 }
 
+#anchor04 {
+  height: 500vh;
+}
+
+#anchor04-01 {
+  height: 200vh;
+}
+
+#anchor04-02 {
+  height: 300vh;
+}
+
+#anchor05 {
+  height: 200vh;
+}
+
+@-skrollr-keyframes frame_clipOut {
+  skrollr-bottom-top {
+    opacity: 1;
+    display: block;
+  }
+  skrollr-top {
+    opacity: 1;
+  }
+  skrollr-top-bottom {
+    display: none;
+  }
+}
+@-skrollr-keyframes frame_fadeOut {
+  skrollr-bottom-top {
+    opacity: 1;
+    display: block;
+  }
+  skrollr-top {
+    opacity: 1;
+  }
+  skrollr-bottom {
+    opacity: 1;
+  }
+  skrollr-top-bottom {
+    opacity: 0;
+    display: none;
+  }
+}
 .first-deck {
   position: relative;
   z-index: 10;
@@ -600,6 +644,10 @@ body {
   opacity: 1;
 }
 
+.first-deck .copy {
+  -skrollr-animation-name: firstDeck_copy;
+}
+
 @-skrollr-keyframes firstDeck_copy {
   skrollr-top {
     margin-top: 0vh;
@@ -610,8 +658,9 @@ body {
     opacity: 0;
   }
 }
-.first-deck .copy {
-  -skrollr-animation-name: firstDeck_copy;
+.second-deck {
+  position: relative;
+  z-index: 0;
 }
 
 .second-deck .copy {
@@ -645,6 +694,10 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.second-deck {
+  -skrollr-animation-name: frame_fadeOut;
 }
 
 .second-deck .copy {
@@ -691,6 +744,11 @@ body {
     height: 100%;
   }
 }
+.third-deck {
+  position: relative;
+  z-index: -5;
+}
+
 .third-deck .copy {
   opacity: 0;
   position: fixed;
@@ -707,9 +765,9 @@ body {
   position: fixed;
   left: 0;
   top: 0;
-  background-image: url(../images/placeholder_03.jpg);
+  background-image: url(../images/placeholder_04.jpg);
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: center center;
   background-size: cover;
 }
 
@@ -722,6 +780,10 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.third-deck {
+  -skrollr-animation-name: frame_fadeOut;
 }
 
 .third-deck .copy {
@@ -747,7 +809,7 @@ body {
 }
 
 @-skrollr-keyframes thirdDeck_Cover {
-  skrollr-bottom-top {
+  skrollr-top {
     height: 100%;
   }
   skrollr-center {
@@ -762,10 +824,104 @@ body {
   skrollr-500-top {
     width: 120%;
     height: 120%;
+    margin-left: -10%;
+    margin-top: -10%;
   }
   skrollr--500-bottom {
     width: 100%;
     height: 100%;
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+.fourth-deck {
+  position: relative;
+  z-index: -10;
+}
+
+.fourth-deck .copy {
+  opacity: 0;
+  position: fixed;
+  width: 60vw;
+  left: 20vw;
+  top: 45vh;
+  padding: 5vh;
+  background: white;
+}
+
+.fourth-deck .background {
+  width: 120%;
+  height: 120%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-image: url(../images/placeholder_03.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.fourth-deck .cover {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  background: #F8F8F8;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fourth-deck {
+  -skrollr-animation-name: frame_fadeOut;
+}
+
+.fourth-deck .copy {
+  -skrollr-animation-name: fourthDeck_Copy;
+}
+
+@-skrollr-keyframes fourthDeck_Copy {
+  skrollr-bottom-top {
+    opacity: 0;
+  }
+  skrollr-center {
+    opacity: 1;
+  }
+  skrollr-700-center {
+    opacity: 1;
+  }
+  skrollr-top-bottom {
+    opacity: 0;
+  }
+}
+.fourth-deck .cover {
+  -skrollr-animation-name: fourthDeck_Cover;
+}
+
+@-skrollr-keyframes fourthDeck_Cover {
+  skrollr-top {
+    height: 100%;
+  }
+  skrollr-center {
+    height: 0%;
+  }
+}
+.fourth-deck .background {
+  -skrollr-animation-name: fourthDeck_Background;
+}
+
+@-skrollr-keyframes fourthDeck_Background {
+  skrollr-500-top {
+    width: 120%;
+    height: 120%;
+    margin-left: -10%;
+    margin-top: -10%;
+  }
+  skrollr--500-bottom {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    margin-top: 0;
   }
 }
 .contact {
@@ -778,6 +934,18 @@ body {
   position: fixed;
   right: 15px;
   top: 15px;
+}
+
+@-skrollr-keyframes activateModal {
+  skrollr-bottom-top {
+    display: none;
+  }
+  skrollr-top {
+    display: block;
+  }
+}
+#contactModal {
+  -skrollr-animation-name: activateModal;
 }
 
 .contact-modal {

@@ -1,6 +1,6 @@
-.third-deck {-skrollr-animation-name:frame_fadeOut}
-.third-deck .copy {-skrollr-animation-name:thirdDeck_Copy;}
-@-skrollr-keyframes thirdDeck_Copy {
+.fourth-deck {-skrollr-animation-name:frame_fadeOut}
+.fourth-deck .copy {-skrollr-animation-name:fourthDeck_Copy;}
+@-skrollr-keyframes fourthDeck_Copy {
     skrollr-#{300-top} {
     }
     skrollr-#{bottom-top} {
@@ -16,8 +16,8 @@
         opacity:0;
     }
 }
-.third-deck .cover{-skrollr-animation-name:thirdDeck_Cover;}
-@-skrollr-keyframes thirdDeck_Cover {
+.fourth-deck .cover{-skrollr-animation-name:fourthDeck_Cover;}
+@-skrollr-keyframes fourthDeck_Cover {
     skrollr-#{top} {
         height:100%;
     }
@@ -25,8 +25,8 @@
         height:0%;
     }
 }
-.third-deck .background {-skrollr-animation-name:thirdDeck_Background;}
-@-skrollr-keyframes thirdDeck_Background {
+.fourth-deck .background {-skrollr-animation-name:fourthDeck_Background;}
+@-skrollr-keyframes fourthDeck_Background {
     skrollr-#{500-top} {
         width:120%;
         height:120%;

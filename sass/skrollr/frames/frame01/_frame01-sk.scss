@@ -1,3 +1,6 @@
+
+
+.first-deck .copy {-skrollr-animation-name:firstDeck_copy;}
 @-skrollr-keyframes firstDeck_copy {
     skrollr-#{top} {
         margin-top:0vh;
@@ -7,7 +10,4 @@
         margin-top:-5vh;
         opacity:0;
     }
-}
-.first-deck .copy {
-    -skrollr-animation-name:firstDeck_copy;
 }

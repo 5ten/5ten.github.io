@@ -8,3 +8,13 @@
     right:15px;
     top:15px;
 }
+
+@-skrollr-keyframes activateModal {
+	skrollr-#{bottom-top} {
+		display:none;
+	}
+	skrollr-#{top} {
+		display:block;
+	}
+}
+#contactModal {-skrollr-animation-name:activateModal}

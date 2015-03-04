@@ -1,3 +1,5 @@
+.second-deck {-skrollr-animation-name:frame_fadeOut}
+
 .second-deck .copy {-skrollr-animation-name:secondDeck_Copy;}
 @-skrollr-keyframes secondDeck_Copy {
     skrollr-#{300-top} {
@@ -35,3 +37,4 @@
         height:100%
     }
 }
+

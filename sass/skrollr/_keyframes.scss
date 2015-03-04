@@ -1,0 +1,28 @@
+@-skrollr-keyframes frame_clipOut {
+    skrollr-#{bottom-top} {
+        opacity:1;
+        display:block;
+    }
+    skrollr-#{top} {
+        opacity:1;
+    }
+    skrollr-#{top-bottom} {
+        display:none;
+    }
+}
+@-skrollr-keyframes frame_fadeOut {
+    skrollr-#{bottom-top} {
+        opacity:1;
+        display:block;
+    }
+    skrollr-#{top} {
+        opacity:1;
+    }
+    skrollr-#{bottom} {
+    	opacity:1;
+    }
+    skrollr-#{top-bottom} {
+    	opacity:0;
+        display:none;
+    }
+}
