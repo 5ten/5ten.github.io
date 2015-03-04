@@ -3,8 +3,10 @@ input[type="submit"] {
   @extend .button;
 }
 .button {
+    font-size:.8em;
+    text-align:center;
+    line-height:1.325;    
     display:inline-block;
-    font-size:.9em;
     font-weight:600;
     text-transform:uppercase;
     padding:0.5em 1.125em;

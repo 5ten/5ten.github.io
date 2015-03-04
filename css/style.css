@@ -324,8 +324,10 @@ dl dd {
 
 .button, button,
 input[type="submit"] {
+  font-size: .8em;
+  text-align: center;
+  line-height: 1.325;
   display: inline-block;
-  font-size: .9em;
   font-weight: 600;
   text-transform: uppercase;
   padding: 0.5em 1.125em;
@@ -368,6 +370,25 @@ input[type="submit"]:hover {
     opacity: 1;
   }
 }
+#header {
+  position: fixed;
+  right: 15px;
+  top: 1vh;
+  opacity: 0;
+  z-index: 100;
+  -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
+  -moz-animation: fadeIn 1s ease-in 2.25s forwards;
+  animation: fadeIn 1s ease-in 2.25s forwards;
+}
+#header img {
+  width: 75%;
+  float: right;
+}
+#header h1 {
+  position: absolute;
+  opacity: 0;
+}
+
 @-webkit-keyframes bottomExpand {
   from {
     width: 0;
@@ -496,6 +517,25 @@ body {
   content: "";
   display: table;
   clear: both;
+}
+
+#header {
+  position: fixed;
+  right: 15px;
+  top: 1vh;
+  opacity: 0;
+  z-index: 100;
+  -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
+  -moz-animation: fadeIn 1s ease-in 2.25s forwards;
+  animation: fadeIn 1s ease-in 2.25s forwards;
+}
+#header img {
+  width: 75%;
+  float: right;
+}
+#header h1 {
+  position: absolute;
+  opacity: 0;
 }
 
 .anchor-container {
@@ -639,32 +679,15 @@ body {
     height: 100%;
   }
 }
-.logo-contact {
-  position: fixed;
-  right: 15px;
-  top: 15px;
-  width: 100px;
-  opacity: 0;
-  z-index: 100;
-  -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
-  -moz-animation: fadeIn 1s ease-in 2.25s forwards;
-  animation: fadeIn 1s ease-in 2.25s forwards;
-}
-.logo-contact img {
-  width: 75%;
-  float: right;
-}
-.logo-contact h1 {
-  position: absolute;
-  opacity: 0;
-}
-
 .contact {
-  font-size: .8em;
-  text-align: center;
-  line-height: 1.325;
   position: fixed;
   left: 15px;
+  top: 15px;
+}
+
+.logo {
+  position: fixed;
+  right: 15px;
   top: 15px;
 }
 
