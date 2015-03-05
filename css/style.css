@@ -940,6 +940,7 @@ body {
   position: absolute;
   top: -20px;
   right: -50px;
+  cursor: pointer;
 }
 .close-contact-form:before {
   content: '\e600';
