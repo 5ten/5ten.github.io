@@ -620,10 +620,10 @@ body {
 }
 @-skrollr-keyframes deckDrawer {
   skrollr-center {
-    margin-top: 0vh;
+    height: 100vh;
   }
   skrollr-top-bottom {
-    margin-top: -100vh;
+    height: 0;
   }
 }
 .first-deck {
