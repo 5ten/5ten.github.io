@@ -1,18 +1,13 @@
-.third-deck {-skrollr-animation-name:frame_fadeOut}
+.third-deck {-skrollr-animation-name:deckDrawer}
 .third-deck .copy {-skrollr-animation-name:thirdDeck_Copy;}
 @-skrollr-keyframes thirdDeck_Copy {
-    skrollr-#{300-top} {
-    }
-    skrollr-#{bottom-top} {
-        opacity:0;
+    skrollr-#{top} {
+         opacity:0;
     }
     skrollr-#{center} {
         opacity:1;
     }
-    skrollr-#{700-center} {
-        opacity:1;
-    }
-    skrollr-#{top-bottom} {
+    skrollr-#{bottom} {
         opacity:0;
     }
 }

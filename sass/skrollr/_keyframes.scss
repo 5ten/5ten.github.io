@@ -1,10 +1,8 @@
 @-skrollr-keyframes frame_clipOut {
     skrollr-#{bottom-top} {
-        opacity:1;
         display:block;
     }
     skrollr-#{top} {
-        opacity:1;
     }
     skrollr-#{top-bottom} {
         display:none;
@@ -25,4 +23,13 @@
     	opacity:0;
         display:none;
     }
+}
+@-skrollr-keyframes deckDrawer {
+    skrollr-#{center} {
+        margin-top:0vh;
+    }
+    skrollr-#{top-bottom} {
+        margin-top:-100vh;
+    }
+
 }

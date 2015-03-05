@@ -1,19 +1,17 @@
-.second-deck {-skrollr-animation-name:frame_fadeOut}
+
+.second-deck {-skrollr-animation-name:deckDrawer}
+
+
 
 .second-deck .copy {-skrollr-animation-name:secondDeck_Copy;}
 @-skrollr-keyframes secondDeck_Copy {
-    skrollr-#{300-top} {
-    }
-    skrollr-#{bottom-top} {
+    skrollr-#{center-top} {
         opacity:0;
     }
-    skrollr-#{center} {
+   skrollr-#{center} {
         opacity:1;
-    }
-    skrollr-#{700-center} {
-        opacity:1;
-    }
-    skrollr-#{top-bottom} {
+   }
+    skrollr-#{bottom} {
         opacity:0;
     }
 }
@@ -28,13 +26,17 @@
 }
 .second-deck .background {-skrollr-animation-name:secondDeck_Background;}
 @-skrollr-keyframes secondDeck_Background {
-    skrollr-#{500-top} {
+    skrollr-#{bottom-top} {
         width:120%;
-        height:120%
+        height:120%;
     }
-    skrollr-#{-500-bottom} {
+    skrollr-#{center} {
+        width:110%;
+        height:110%;
+    }
+    skrollr-#{top-bottom} {
         width:100%;
-        height:100%
+        height:100%;
     }
 }
 

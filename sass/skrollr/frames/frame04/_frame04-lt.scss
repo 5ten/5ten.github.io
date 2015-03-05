@@ -1,10 +1,13 @@
 .fourth-deck {
-    position:relative;
+    position:fixed;
+    display:inline-block;
+    width:100vw;
+    height:100vh;
     z-index:-10;
 }
 .fourth-deck .copy {
     opacity:0;
-    position:fixed;
+    position:absolute;
     width:60vw;
     left:20vw;
     top:45vh;
@@ -14,7 +17,7 @@
 .fourth-deck .background {
     width:120%;
     height:120%;
-    position:fixed;
+    position:absolute;
     left:0;
     top:0;
     background-image:url(../images/placeholder_03.jpg);
@@ -22,14 +25,4 @@
     background-position:center center;
     background-size:cover;
 
-}
-.fourth-deck .cover {
-    position:fixed;
-    left:0;
-    top:0;
-    opacity:1;
-    background:$fiveWhite;
-    width:100%;
-    height:100%;
-    overflow:hidden;
 }

@@ -555,52 +555,48 @@ body {
 }
 
 #anchor02 {
-  height: 500vh;
+  height: 125vh;
 }
 
 #anchor02-01 {
-  height: 200vh;
+  height: 50vh;
 }
 
 #anchor02-02 {
-  height: 300vh;
+  height: 75vh;
 }
 
 #anchor03 {
-  height: 500vh;
+  height: 125vh;
 }
 
 #anchor03-01 {
-  height: 200vh;
+  height: 50vh;
 }
 
 #anchor03-02 {
-  height: 300vh;
+  height: 75vh;
 }
 
 #anchor04 {
-  height: 500vh;
+  height: 125vh;
 }
 
 #anchor04-01 {
-  height: 200vh;
+  height: 50vh;
 }
 
 #anchor04-02 {
-  height: 300vh;
+  height: 75vh;
 }
 
 #anchor05 {
-  height: 200vh;
+  height: 50vh;
 }
 
 @-skrollr-keyframes frame_clipOut {
   skrollr-bottom-top {
-    opacity: 1;
     display: block;
-  }
-  skrollr-top {
-    opacity: 1;
   }
   skrollr-top-bottom {
     display: none;
@@ -620,6 +616,14 @@ body {
   skrollr-top-bottom {
     opacity: 0;
     display: none;
+  }
+}
+@-skrollr-keyframes deckDrawer {
+  skrollr-center {
+    margin-top: 0vh;
+  }
+  skrollr-top-bottom {
+    margin-top: -100vh;
   }
 }
 .first-deck {
@@ -659,13 +663,16 @@ body {
   }
 }
 .second-deck {
-  position: relative;
+  position: fixed;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
 }
 
 .second-deck .copy {
   opacity: 0;
-  position: fixed;
+  position: absolute;
   width: 60vw;
   left: 20vw;
   top: 45vh;
@@ -676,7 +683,7 @@ body {
 .second-deck .background {
   width: 120%;
   height: 120%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   background-image: url(../images/placeholder_02.jpg);
@@ -697,7 +704,7 @@ body {
 }
 
 .second-deck {
-  -skrollr-animation-name: frame_fadeOut;
+  -skrollr-animation-name: deckDrawer;
 }
 
 .second-deck .copy {
@@ -705,16 +712,13 @@ body {
 }
 
 @-skrollr-keyframes secondDeck_Copy {
-  skrollr-bottom-top {
+  skrollr-center-top {
     opacity: 0;
   }
   skrollr-center {
     opacity: 1;
   }
-  skrollr-700-center {
-    opacity: 1;
-  }
-  skrollr-top-bottom {
+  skrollr-bottom {
     opacity: 0;
   }
 }
@@ -735,23 +739,30 @@ body {
 }
 
 @-skrollr-keyframes secondDeck_Background {
-  skrollr-500-top {
+  skrollr-bottom-top {
     width: 120%;
     height: 120%;
   }
-  skrollr--500-bottom {
+  skrollr-center {
+    width: 110%;
+    height: 110%;
+  }
+  skrollr-top-bottom {
     width: 100%;
     height: 100%;
   }
 }
 .third-deck {
-  position: relative;
+  position: fixed;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
   z-index: -5;
 }
 
 .third-deck .copy {
   opacity: 0;
-  position: fixed;
+  position: absolute;
   width: 60vw;
   left: 20vw;
   top: 45vh;
@@ -762,7 +773,7 @@ body {
 .third-deck .background {
   width: 120%;
   height: 120%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   background-image: url(../images/placeholder_04.jpg);
@@ -771,19 +782,8 @@ body {
   background-size: cover;
 }
 
-.third-deck .cover {
-  position: fixed;
-  left: 0;
-  top: 0;
-  opacity: 1;
-  background: #F8F8F8;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .third-deck {
-  -skrollr-animation-name: frame_fadeOut;
+  -skrollr-animation-name: deckDrawer;
 }
 
 .third-deck .copy {
@@ -791,16 +791,13 @@ body {
 }
 
 @-skrollr-keyframes thirdDeck_Copy {
-  skrollr-bottom-top {
+  skrollr-top {
     opacity: 0;
   }
   skrollr-center {
     opacity: 1;
   }
-  skrollr-700-center {
-    opacity: 1;
-  }
-  skrollr-top-bottom {
+  skrollr-bottom {
     opacity: 0;
   }
 }
@@ -835,13 +832,16 @@ body {
   }
 }
 .fourth-deck {
-  position: relative;
+  position: fixed;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
   z-index: -10;
 }
 
 .fourth-deck .copy {
   opacity: 0;
-  position: fixed;
+  position: absolute;
   width: 60vw;
   left: 20vw;
   top: 45vh;
@@ -852,7 +852,7 @@ body {
 .fourth-deck .background {
   width: 120%;
   height: 120%;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
   background-image: url(../images/placeholder_03.jpg);
@@ -861,19 +861,8 @@ body {
   background-size: cover;
 }
 
-.fourth-deck .cover {
-  position: fixed;
-  left: 0;
-  top: 0;
-  opacity: 1;
-  background: #F8F8F8;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
 .fourth-deck {
-  -skrollr-animation-name: frame_fadeOut;
+  -skrollr-animation-name: deckDrawer;
 }
 
 .fourth-deck .copy {
@@ -881,29 +870,14 @@ body {
 }
 
 @-skrollr-keyframes fourthDeck_Copy {
-  skrollr-bottom-top {
-    opacity: 0;
-  }
-  skrollr-center {
-    opacity: 1;
-  }
-  skrollr-700-center {
-    opacity: 1;
-  }
-  skrollr-top-bottom {
-    opacity: 0;
-  }
-}
-.fourth-deck .cover {
-  -skrollr-animation-name: fourthDeck_Cover;
-}
-
-@-skrollr-keyframes fourthDeck_Cover {
   skrollr-top {
-    height: 100%;
+    opacity: 0;
   }
   skrollr-center {
-    height: 0%;
+    opacity: 1;
+  }
+  skrollr-bottom {
+    opacity: 0;
   }
 }
 .fourth-deck .background {
@@ -934,18 +908,6 @@ body {
   position: fixed;
   right: 15px;
   top: 15px;
-}
-
-@-skrollr-keyframes activateModal {
-  skrollr-bottom-top {
-    display: none;
-  }
-  skrollr-top {
-    display: block;
-  }
-}
-#contactModal {
-  -skrollr-animation-name: activateModal;
 }
 
 .contact-modal {
