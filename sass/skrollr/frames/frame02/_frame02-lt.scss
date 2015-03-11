@@ -3,7 +3,9 @@
     display:inline-block;
     width:100vw;
     height:100vh;
+    left:0;
     z-index:0;
+    overflow:hidden;
 }
 .second-deck .copy {
     opacity:0;
@@ -17,7 +19,7 @@
 .second-deck .background {
     width:120%;
     height:120%;
-    position:absolute;
+    position:fixed;
     left:0;
     top:0;
     background-image:url(../images/placeholder_02.jpg);

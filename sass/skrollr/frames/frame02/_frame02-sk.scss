@@ -1,8 +1,6 @@
 
 .second-deck {-skrollr-animation-name:deckDrawer}
 
-
-
 .second-deck .copy {-skrollr-animation-name:secondDeck_Copy;}
 @-skrollr-keyframes secondDeck_Copy {
     skrollr-#{center-top} {
@@ -24,19 +22,5 @@
         height:0%;
     }
 }
-.second-deck .background {-skrollr-animation-name:secondDeck_Background;}
-@-skrollr-keyframes secondDeck_Background {
-    skrollr-#{bottom-top} {
-        width:120%;
-        height:120%;
-    }
-    skrollr-#{center} {
-        width:110%;
-        height:110%;
-    }
-    skrollr-#{top-bottom} {
-        width:100%;
-        height:100%;
-    }
-}
+
 
