@@ -1,6 +1,6 @@
 .first-deck {
     position:relative;
-    z-index:10;
+    z-index:1;
 }
 .first-deck .frame {
     @include size(100% 150%);

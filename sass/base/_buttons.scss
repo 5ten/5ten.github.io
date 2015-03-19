@@ -21,3 +21,36 @@ input[type="submit"] {
         color:$fiveWhite;
     }
 }
+
+.arrow {
+    display:block;
+    @include size(50px);
+    background:$fiveBlack;
+    border:3px solid $fiveBlack;
+    text-align:center;
+    @include transition(all 200ms ease);
+    &:before {
+        font-family:"icomoon";
+        color:$fiveWhite;
+        text-align:center;
+        font-size:2em;
+        display:block;
+        margin:10px auto 0;
+    }
+    &:hover {
+        background:$fiveWhite;
+        &:before {
+            color:$fiveBlack;
+        }
+    }
+}
+.down {
+    &:before {
+        content:'\e602';
+    }
+}
+.up {
+    &:before {
+        content:'\e601'
+    }
+}

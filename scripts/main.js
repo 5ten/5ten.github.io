@@ -8,4 +8,5 @@ jQuery(function($){
     closeModal.on('click', function() {
         contactModal.removeClass('display');
     });
+    $('a').smoothScroll();
 });

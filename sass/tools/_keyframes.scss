@@ -6,3 +6,11 @@
         opacity:1;
     }
 }
+@include keyframes(crazyShit) {
+	from {
+		margin-left:0;
+	}
+	to {
+		margin-left:100px;
+	}
+}

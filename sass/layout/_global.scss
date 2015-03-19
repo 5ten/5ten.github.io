@@ -9,9 +9,16 @@ body {
     );
     background:$fiveWhite;
 }
+
 .container {
     @include outer-container;
     opacity:0;
     @include animation(fadeIn 800ms ease-in-out 3.5s forwards);
     background-color:$fiveWhite;
+}
+.arrows {
+    position:fixed;
+    z-index:50;
+    right:17px;
+    top:50vh;
 }

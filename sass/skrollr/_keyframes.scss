@@ -26,10 +26,10 @@
 }
 @-skrollr-keyframes deckDrawer {
     skrollr-#{center} {
-        height:100vh;
+        margin-top:0%;
     }
     skrollr-#{top-bottom} {
-        height:0;
+        margin-top:-100%;
     }
 
 }
