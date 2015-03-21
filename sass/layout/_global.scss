@@ -10,8 +10,10 @@ body {
     background:$fiveWhite;
 }
 .container {
+    margin:20%;
     @include outer-container;
     opacity:0;
     @include animation(fadeIn 800ms ease-in-out 3.5s forwards);
     background-color:$fiveWhite;
 }
+.hidden {display:none}

@@ -22,10 +22,10 @@
     top:0;
     left:0;
     z-index:1;
-    border-left:15px solid $fiveWhite;
+    border-left:350px solid $fiveWhite;
     border-right:15px solid $fiveWhite;
     border-bottom:15px solid $fiveWhite;
-    border-top:75px solid $fiveWhite;
+    border-top:10vh solid $fiveWhite;
     .inner {
         position:relative;
         width:100%;
@@ -41,25 +41,25 @@
         left:0;
         @include animation(bottomExpand 1s ease-in-out 1s forwards);
     }
-    .bottom {
-        height:5px;
-        bottom:0;
-        right:0;
-        @include animation(bottomExpand 1s ease-in-out 1s forwards);
-    }
-    .left {
-        @include animation(sideExpand 1s ease-in-out 1s forwards);
-        height:0;
-        top:0;
-        left:0;
-        width:5px;
-        bottom:0;
-    }
-    .right {
-        @include animation(sideExpand 1s ease-in-out 1s forwards);
-        height:0;
-        right:0;
-        width:5px;
-        bottom:0;
-    }
+    // .bottom {
+    //     height:5px;
+    //     bottom:0;
+    //     right:0;
+    //     @include animation(bottomExpand 1s ease-in-out 1s forwards);
+    // }
+    // .left {
+    //     @include animation(sideExpand 1s ease-in-out 1s forwards);
+    //     height:0;
+    //     top:0;
+    //     left:0;
+    //     width:5px;
+    //     bottom:0;
+    // }
+    // .right {
+    //     @include animation(sideExpand 1s ease-in-out 1s forwards);
+    //     height:0;
+    //     right:0;
+    //     width:5px;
+    //     bottom:0;
+    // }
 }
