@@ -9,6 +9,7 @@ body {
     );
     background:$fiveWhite;
 }
+
 .container {
     margin:20%;
     @include outer-container;
@@ -17,3 +18,9 @@ body {
     background-color:$fiveWhite;
 }
 .hidden {display:none}
+.arrows {
+    position:fixed;
+    z-index:50;
+    right:17px;
+    top:50vh;
+}
