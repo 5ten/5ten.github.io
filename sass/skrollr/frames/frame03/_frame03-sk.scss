@@ -1,8 +1,8 @@
 
-.fourth-deck {-skrollr-animation-name:deckDrawer}
+.third-deck {-skrollr-animation-name:deckDrawer}
 
-.fourth-deck .copy {-skrollr-animation-name:fourthDeck_Copy;}
-@-skrollr-keyframes fourthDeck_Copy {
+.third-deck .copy {-skrollr-animation-name:thirdDeck_Copy;}
+@-skrollr-keyframes thirdDeck_Copy {
     skrollr-#{center-top} {
         opacity:0;
     }
@@ -14,9 +14,9 @@
     }
 }
 
-.fourth-deck .background {-skrollr-animation-name:fourthDeck_Background;}
+.third-deck .background {-skrollr-animation-name:thirdDeck_Background;}
 
-@-skrollr-keyframes fourthDeck_Background {
+@-skrollr-keyframes thirdDeck_Background {
    skrollr-#{500-top} {
         width:110%;
         height:110%;
@@ -31,9 +31,9 @@
     }
 }
 
-.fourth-deck .cover{-skrollr-animation-name:fourthDeck_Cover;}
+.third-deck .cover{-skrollr-animation-name:thirdDeck_Cover;}
 
-@-skrollr-keyframes fourthDeck_Cover {
+@-skrollr-keyframes thirdDeck_Cover {
     skrollr-#{bottom-top} {
         height:100%;
     }

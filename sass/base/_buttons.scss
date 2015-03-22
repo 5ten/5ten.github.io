@@ -10,7 +10,8 @@ input[type="submit"] {
     font-weight:600;
     text-transform:uppercase;
     padding:0.5em 1.125em;
-    border:5px solid $fiveBlack;
+    border:0;
+    border-top:1px solid $fiveBlack;
     color:$fiveBlack;
     background:$fiveWhite;
     cursor:pointer;
@@ -25,22 +26,22 @@ input[type="submit"] {
 .arrow {
     display:block;
     @include size(50px);
-    background:$fiveBlack;
-    border:3px solid $fiveBlack;
+    background:$fiveWhite;
+    border:3px solid transparent;
     text-align:center;
     @include transition(all 200ms ease);
     &:before {
         font-family:"icomoon";
-        color:$fiveWhite;
+        color:$fiveBlack;
         text-align:center;
         font-size:2em;
         display:block;
         margin:10px auto 0;
     }
     &:hover {
-        background:$fiveWhite;
+        background:$fiveBlack;
         &:before {
-            color:$fiveBlack;
+            color:$fiveWhite;
         }
     }
 }

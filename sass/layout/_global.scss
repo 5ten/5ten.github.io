@@ -17,8 +17,8 @@ body {
     background-color:$fiveWhite;
 }
 .arrows {
-    position:fixed;
+    position:absolute;
     z-index:50;
-    right:17px;
-    top:50vh;
+    right:0;
+    bottom:0;
 }
