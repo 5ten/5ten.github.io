@@ -22,10 +22,10 @@
     top:0;
     left:0;
     z-index:1;
-    border-left:350px solid $fiveWhite;
-    border-right:15px solid $fiveWhite;
-    border-bottom:15px solid $fiveWhite;
-    border-top:10vh solid $fiveWhite;
+    border-left:30vw solid $fiveWhite;
+    border-right:5vw solid $fiveWhite;
+    border-bottom:5vw solid $fiveWhite;
+    border-top:25vh solid $fiveWhite;
     .inner {
         position:relative;
         width:100%;
@@ -37,9 +37,18 @@
     }
     .top {
         height:5px;
-        top:0;
+        top:-10vh;
         left:0;
         @include animation(bottomExpand 1s ease-in-out 1s forwards);
+        &:before {
+            display:block;
+            border-top:1px $fiveBlack solid;
+            width:5vw;
+            position:absolute;
+            top:-10px;
+            right:0;
+            content:"";
+        }
     }
     // .bottom {
     //     height:5px;

@@ -17,13 +17,21 @@
 @import 'skrollr/anchors';
 @import 'skrollr/keyframes';
 
+@import 'skrollr/frames/frame-default/frame-default';
+
 @import 'skrollr/frames/frame01/frame01-lt';
 @import 'skrollr/frames/frame01/frame01-sk';
 
 @import 'skrollr/frames/frame02/frame02-lt';
 @import 'skrollr/frames/frame02/frame02-sk';
 
-@import 'skrollr/frames/frame-default/frame-default';
+@import 'skrollr/frames/frame03/frame03-lt';
+@import 'skrollr/frames/frame03/frame03-sk';
+
+@import 'skrollr/frames/frame04/frame04-lt';
+@import 'skrollr/frames/frame04/frame04-sk';
+
 
 //Modules
 @import 'blocks/contact';
+@import 'blocks/logo-contact';

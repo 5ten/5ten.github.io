@@ -3,16 +3,23 @@
     z-index:1;
 }
 .first-deck .frame {
-    @include size(100% 150%);
+    @include size(100% 100%);
     position:absolute;
     top:0;
     left:0;
     z-index:1;
 }
+ .first-deck .background {
+     background:$fiveWhite;
+     position:absolute;
+ }
 .first-deck .copy {
     position:fixed;
     width:60vw;
-    left:20vw;
-    top:45vh;
+    left:30vw;
+    top:40vh;
     opacity:1;
+    h2{
+        margin:0 14vw 0 0;
+    }
 }

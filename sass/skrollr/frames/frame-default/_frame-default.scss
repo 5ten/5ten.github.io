@@ -3,30 +3,33 @@
     display:inline-block;
     width:100vw;
     height:100vh;
+    top:0vh;
     left:0;
-    top:0;
-    -skrollr-animation-name:deckDrawer;
+    z-index:0;
+    overflow:hidden;
+    //-skrollr-animation-name:deckDrawer;
 }
 %deck-copy {
     opacity:0;
     position:absolute;
-    width:60vw;
-    left:20vw;
+    width:45vw;
+    left:35vw;
     top:45vh;
     padding:5vh;
     background:white;
-    -skrollr-animation-name:default-copy;
+    //-skrollr-animation-name:default-copy;
 }
 %deck-background {
     width:100%;
     height:100%;
-    position:absolute;
-    left:0;
+    position:fixed;
+    margin-left:29.9vw;
     top:0;
-    background-image:url(../images/placeholder_04.jpg);
     background-repeat:no-repeat;
     background-position:center center;
     background-size:cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
 
 }
 @-skrollr-keyframes default-copy {
@@ -41,16 +44,25 @@
     }
 }
 
+.first-deck {z-index:-1;}
+.second-deck {z-index:-2;}
 .third-deck {z-index:-3;}
 .fourth-deck {z-index:-4;}
+
+.first-deck,
+.second-deck,
 .third-deck, 
 .fourth-deck {
     @extend %deck;
 }
+// .first-deck .copy,
+.second-deck .copy,
 .third-deck .copy,
 .fourth-deck .copy {
     @extend %deck-copy;
 }
+.first-deck .background,
+.second-deck .background,
 .third-deck .background,
 .fourth-deck .background {
     @extend %deck-background;

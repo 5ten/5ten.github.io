@@ -1,0 +1,14 @@
+$left-margin: 11vw;
+
+.contact {
+    position:fixed;
+    left:$left-margin;
+    bottom:10vh;
+}
+.logo {
+    width:7vw;
+    img {width:100%; float:left;}  
+    position:fixed;
+    left:$left-margin;
+    top:25vh;
+}
