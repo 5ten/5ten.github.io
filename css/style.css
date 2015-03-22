@@ -619,7 +619,7 @@ body {
 }
 
 #anchor01 {
-  height: 150vh;
+  height: 100vh;
 }
 
 #anchor01-01 {
@@ -787,7 +787,7 @@ body {
 
 .first-deck .background {
   background: #F8F8F8;
-  position: absolute;
+  position: fixed;
 }
 
 .first-deck .copy {
@@ -801,20 +801,6 @@ body {
   margin: 0 14vw 0 0;
 }
 
-.first-deck .copy {
-  -skrollr-animation-name: firstDeck_copy;
-}
-
-@-skrollr-keyframes firstDeck_copy {
-  skrollr-top {
-    margin-top: 0vh;
-    opacity: 1;
-  }
-  skrollr-bottom {
-    margin-top: -5vh;
-    opacity: 0;
-  }
-}
 .second-deck .background {
   background-image: url(../images/placeholder_02.jpg);
 }
