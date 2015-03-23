@@ -18,8 +18,9 @@ module.exports = function(grunt) {
           'jquery-mousewheel': 'jquery'
         },
         mainFiles: {
-          'skrollr-stylesheets': 'src/skrollr.stylesheets.js',
-          'jquery-smooth-scroll': 'jquery.smooth-scroll.js'
+          'skrollr-stylesheets': 'dist/skrollr.stylesheets.min.js',
+          'jquery-smooth-scroll': 'jquery.smooth-scroll.min.js',
+          'waypoints': 'lib/jquery.waypoints.min.js'
         },
         bowerOptions: {
           relative: false

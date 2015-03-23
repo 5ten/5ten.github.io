@@ -514,7 +514,7 @@ input[type="submit"]:hover {
   z-index: 1;
   border-left: 30vw solid #F8F8F8;
   border-right: 5vw solid #F8F8F8;
-  border-bottom: 5vw solid #F8F8F8;
+  border-bottom: 7vw solid #F8F8F8;
   border-top: 25vh solid #F8F8F8;
 }
 .bars .inner {
