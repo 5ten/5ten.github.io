@@ -500,7 +500,6 @@ input[type="submit"]:hover {
 }
 .deck .background {
   position: absolute;
-  background-attachment: fixed;
   background-size: cover;
   width: 100%;
   height: 100%;
