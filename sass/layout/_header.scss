@@ -1,8 +1,11 @@
 #header {
-    position:relative;
+//    background:red;
+    position:fixed;
     top:1vh;
     opacity:0;
     z-index:100;
+    width:30vw;
+    height:99vh;
     @include animation(fadeIn 1s ease-in 2.25s forwards);
     h1 {
         position:absolute;
@@ -10,13 +13,44 @@
     }
 }
 
+$left-margin: 11vw;
+
 .contact {
-    position:fixed;
-    left:15px;
+    position:absolute;
+    left:$left-margin;
     bottom:15px;
 }
 .logo {
-    position:fixed;
-    left:15px;
-    top:10vh;
+    img {width:100%; float:left;}  
+    position:absolute;
+    left:$left-margin;
+    top:25vh;
+    width:7vw;
+}
+
+@include keyframes(topExpand) {
+    from {
+        width:0;
+    }
+    to {
+        width:unquote("calc(100vw - 35vw)");
+    }
+}
+
+.bar {
+    position:absolute;
+    background:$fiveBlack;
+    height:5px;
+    top:15vh;
+    width:100%;
+    @include animation(topExpand 1s ease-in-out 1s forwards);
+    &:before {
+        display:block;
+        border-top:1px $fiveBlack solid;
+        width:5vw;
+        position:absolute;
+        top:-10px;
+        right:0;
+        content:"";
+    }
 }

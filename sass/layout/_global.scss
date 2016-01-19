@@ -1,3 +1,5 @@
+.hidden {display:none}
+
 body {
     opacity:0;
     @include animation(
@@ -11,16 +13,17 @@ body {
 }
 
 .container {
-    margin:20%;
-    @include outer-container;
-    opacity:0;
-    @include animation(fadeIn 800ms ease-in-out 3.5s forwards);
+    padding:0 0 0 30vw;
     background-color:$fiveWhite;
+    &:hover {
+        opacity:.5em;
+    }
 }
-.hidden {display:none}
 .arrows {
     position:absolute;
     z-index:50;
     right:0;
     bottom:0;
+    display:none;
 }
+

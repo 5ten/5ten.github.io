@@ -13,14 +13,10 @@ module.exports = function(grunt) {
             'modernizr'
         ],
         dependencies: {
-          'underscore': 'jquery',
-          'backbone': 'underscore',
-          'jquery-mousewheel': 'jquery'
         },
         mainFiles: {
-          'skrollr-stylesheets': 'dist/skrollr.stylesheets.min.js',
-          'jquery-smooth-scroll': 'jquery.smooth-scroll.min.js',
-          'waypoints': 'lib/jquery.waypoints.min.js'
+          // 'jquery-smooth-scroll': 'jquery.smooth-scroll.min.js',
+          // 'waypoints': 'lib/jquery.waypoints.min.js'
         },
         bowerOptions: {
           relative: false

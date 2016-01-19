@@ -24,8 +24,10 @@ $light-gray: #DDD;
 $light-red: #FBE3E4;
 $light-yellow: #FFF6BF;
 $light-green: #E6EFC2;
-$fiveBlack:#1D1F21;
-$fiveWhite:#F8F8F8;
+$dark:#1D1F21;
+$light:#F8F8F8;
+$fiveBlack:$dark;
+$fiveWhite:$light;
 
 // Body Color
 $base-body-color: white;
