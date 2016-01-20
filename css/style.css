@@ -440,6 +440,9 @@ input[type="submit"]:hover {
   font-size: 10vh;
   color: #1D1F21;
 }
+.icon-logo:hover {
+  color: #1D1F21;
+}
 
 @-webkit-keyframes topExpand {
   from {
@@ -536,6 +539,22 @@ input[type="submit"]:hover {
   font-size: 5vh;
   width: 100%;
 }
+.deck .branding {
+  opacity: 0;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  transition: all 0.8s;
+  width: 100%;
+  height: 10%;
+  top: 45%;
+  z-index: 1;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+.deck .branding svg {
+  width: 20vw;
+}
 .deck .background {
   position: absolute;
   background-size: cover;
@@ -548,13 +567,19 @@ input[type="submit"]:hover {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(235, 235, 235, 0.85);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.deck .background:hover:before {
+  opacity: 1;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
   transition: all 0.8s;
 }
-.deck .background:hover:before {
-  opacity: .5;
+.deck .background:hover .branding {
+  opacity: 1;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
   transition: all 0.8s;
@@ -571,6 +596,22 @@ input[type="submit"]:hover {
   width: 50%;
   float: left;
   height: 50vh;
+}
+
+.icon-yc {
+  font-size: 20vh;
+}
+
+.icon-futo {
+  font-size: 5vh;
+}
+
+.icon-tk {
+  font-size: 3vh;
+}
+
+.icon-purebar {
+  font-size: 10vh;
 }
 
 @-webkit-keyframes fadeIn {
@@ -681,6 +722,9 @@ body {
   font-size: 10vh;
   color: #1D1F21;
 }
+.icon-logo:hover {
+  color: #1D1F21;
+}
 
 @-webkit-keyframes topExpand {
   from {
@@ -776,29 +820,40 @@ body.night {
   background: #1D1F21;
   color: #F8F8F8;
 }
-
-.night .container {
+body.night .container {
   background: #1D1F21;
 }
-.night .icon-logo {
+body.night .icon-logo {
   color: #F8F8F8;
 }
-.night .bar {
+body.night .icon-logo:hover {
+  color: #F8F8F8;
+}
+body.night .bar {
   background: #F8F8F8;
 }
-.night .bar:before {
+body.night .bar:before {
   border-color: #F8F8F8;
 }
-.night .button, .night button,
-.night input[type="submit"] {
+body.night .button, body.night button,
+body.night input[type="submit"] {
   border-color: #F8F8F8;
   color: #F8F8F8;
   background: #1D1F21;
 }
-.night .button:hover, .night button:hover,
-.night input[type="submit"]:hover {
+body.night .button:hover, body.night button:hover,
+body.night input[type="submit"]:hover {
   background: #F8F8F8;
   color: #1D1F21;
+}
+body.night .deck .background:before {
+  background: rgba(25, 25, 25, 0.85);
+}
+body.night .contact-modal {
+  background: rgba(29, 31, 33, 0.98);
+}
+body.night .close-contact-form:before {
+  color: #F8F8F8;
 }
 
 /*# sourceMappingURL=style.css.map */

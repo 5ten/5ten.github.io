@@ -14,17 +14,18 @@
 //Blocks
 @import 'blocks/contact';
 
-body.night {
+body.night
+{
 	background:$fiveBlack;
 	color: $fiveWhite;
-}
-
-.night {
 	.container {
 		background:$fiveBlack;
 	}
 	.icon-logo {
 		color: $fiveWhite;
+	    &:hover {
+	        color:$fiveWhite;
+	    }		
 	}
 	.bar {
 		background:$fiveWhite;
@@ -40,5 +41,16 @@ body.night {
 	        background:$fiveWhite;
 	        color:$fiveBlack;
 	    }	
+	}
+	.deck .background:before {
+		background:rgba(25, 25, 25, .85);
+	}
+	.contact-modal {
+    	background:rgba($fiveBlack,.98);	
+    }
+	.close-contact-form {
+		&:before {
+        color:$fiveWhite;
+    	}
 	}
 }

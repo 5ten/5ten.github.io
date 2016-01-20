@@ -36,6 +36,9 @@ $left-margin: 11vw;
 .icon-logo {
     font-size:10vh;
     color:$fiveBlack;
+    &:hover {
+        color:$fiveBlack;        
+    }
 }
 @include keyframes(topExpand) {
     from {
