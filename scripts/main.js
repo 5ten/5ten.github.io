@@ -2,7 +2,7 @@ jQuery(function($){
 
     var hr = (new Date()).getHours();
 
-    if ((hr <= 7) && (hr => 17)) {
+    if ((hr <= 7) || (hr >= 17)) {
         $('body').addClass('night');
     }
     var contactModal = $('#contactModal');
