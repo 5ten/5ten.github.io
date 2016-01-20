@@ -1,15 +1,22 @@
+@include keyframes(fadeIn) {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
 #header {
-//    background:red;
     position:fixed;
     top:1vh;
     opacity:0;
-    z-index:100;
+    z-index:1000;
     width:30vw;
     height:99vh;
     @include animation(fadeIn 1s ease-in 2.25s forwards);
     h1 {
-        position:absolute;
-        opacity:0;
+        display:none;
     }
 }
 
@@ -21,27 +28,29 @@ $left-margin: 11vw;
     bottom:20vh;
 }
 .logo {
-    .icon-logo {
-        font-size:10vh;
-        color:$fiveBlack;
-    }
-    position:absolute;
-    left:$left-margin;
+    position:relative;
     top:20vh;
-    width:7vw;
+    width:100%;
+    text-align:center;
 }
-
+.icon-logo {
+    font-size:10vh;
+    color:$fiveBlack;
+}
 @include keyframes(topExpand) {
     from {
         width:0;
+        opacity:0;
     }
     to {
         width:unquote("calc(100vw - 35vw)");
+        opacity:1;
     }
 }
 
 .bar {
     position:absolute;
+    opacity:0;
     background:$fiveBlack;
     height:5px;
     top:15vh;

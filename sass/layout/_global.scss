@@ -1,20 +1,23 @@
+@include keyframes(fadeIn) {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+
 .hidden {display:none}
 
 body {
     opacity:0;
-    @include animation(
-        fadeIn
-        300ms
-        ease
-        800ms
-        forwards
-    );
+    @include animation(fadeIn 300ms ease 800ms forwards);
     background:$fiveWhite;
 }
 
 .container {
     padding:0 0 0 30vw;
-    background-color:$fiveWhite;
+    background:$fiveWhite;
     &:hover {
         opacity:.5em;
     }

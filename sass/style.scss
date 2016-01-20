@@ -13,3 +13,32 @@
 
 //Blocks
 @import 'blocks/contact';
+
+body.night {
+	background:$fiveBlack;
+	color: $fiveWhite;
+}
+
+.night {
+	.container {
+		background:$fiveBlack;
+	}
+	.icon-logo {
+		color: $fiveWhite;
+	}
+	.bar {
+		background:$fiveWhite;
+	}
+	.bar:before {
+		border-color: $fiveWhite;
+	}
+	.button {
+	    border-color:$fiveWhite;
+	    color:$fiveWhite;
+	    background:$fiveBlack;
+	    &:hover {
+	        background:$fiveWhite;
+	        color:$fiveBlack;
+	    }	
+	}
+}
