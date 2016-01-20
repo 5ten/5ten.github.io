@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(../icomoon/style.css);
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -87,7 +88,7 @@ input, select {
 }
 
 body {
-  color: #1D1F21;
+  color: #F8F8F8;
   font-family: "proxima-nova";
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
@@ -174,18 +175,18 @@ hgroup {
 }
 
 del {
-  color: #41454a;
+  color: white;
 }
 
 blockquote {
   border-left: 2px solid #DDD;
-  color: #41454a;
+  color: white;
   margin: 1.5em 0;
   padding-left: 0.75em;
 }
 
 cite {
-  color: #595f65;
+  color: white;
   font-style: italic;
 }
 cite:before {
@@ -224,10 +225,10 @@ select[multiple=multiple] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  border: 5px solid #1D1F21;
+  border: 5px solid #F8F8F8;
   border-radius: 0;
-  color: #1D1F21;
-  background: #F8F8F8;
+  color: #F8F8F8;
+  background: #1D1F21;
   font-family: "proxima-nova";
   font-size: 1em;
   margin-bottom: 0.75em;
@@ -243,14 +244,14 @@ select[multiple=multiple] {
 textarea:hover,
 input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover,
 select[multiple=multiple]:hover {
-  background: #1D1F21;
-  color: #F8F8F8;
+  background: #F8F8F8;
+  color: #1D1F21;
 }
 textarea:focus,
 input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus,
 select[multiple=multiple]:focus {
-  background: #1D1F21;
-  color: #F8F8F8;
+  background: #F8F8F8;
+  color: #1D1F21;
   box-shadow: none;
 }
 
@@ -333,9 +334,9 @@ input[type="submit"] {
   text-transform: uppercase;
   padding: 0.5em 2.25em 0.5em 0;
   border: 0;
-  border-top: 1px solid #1D1F21;
-  color: #1D1F21;
-  background: #F8F8F8;
+  border-top: 1px solid #F8F8F8;
+  color: #F8F8F8;
+  background: #1D1F21;
   cursor: pointer;
   outline: 0;
   -webkit-transition: all 200ms ease-in-out;
@@ -345,15 +346,15 @@ input[type="submit"] {
 .button:hover, button:hover,
 input[type="submit"]:hover {
   padding: 0.5em 1.125em;
-  background: #1D1F21;
-  color: #F8F8F8;
+  background: #F8F8F8;
+  color: #1D1F21;
 }
 
 .arrow {
   display: block;
   height: 50px;
   width: 50px;
-  background: #F8F8F8;
+  background: #1D1F21;
   border: 3px solid transparent;
   text-align: center;
   -webkit-transition: all 200ms ease;
@@ -362,17 +363,17 @@ input[type="submit"]:hover {
 }
 .arrow:before {
   font-family: "icomoon";
-  color: #1D1F21;
+  color: #F8F8F8;
   text-align: center;
   font-size: 2em;
   display: block;
   margin: 10px auto 0;
 }
 .arrow:hover {
-  background: #1D1F21;
+  background: #F8F8F8;
 }
 .arrow:hover:before {
-  color: #F8F8F8;
+  color: #1D1F21;
 }
 
 .down:before {
@@ -402,18 +403,18 @@ input[type="submit"]:hover {
 .contact {
   position: absolute;
   left: 11vw;
-  bottom: 15px;
+  bottom: 20vh;
 }
 
 .logo {
   position: absolute;
   left: 11vw;
-  top: 25vh;
+  top: 20vh;
   width: 7vw;
 }
-.logo img {
-  width: 100%;
-  float: left;
+.logo .icon-logo {
+  font-size: 10vh;
+  color: #F8F8F8;
 }
 
 @-webkit-keyframes topExpand {
@@ -442,7 +443,7 @@ input[type="submit"]:hover {
 }
 .bar {
   position: absolute;
-  background: #1D1F21;
+  background: #F8F8F8;
   height: 5px;
   top: 15vh;
   width: 100%;
@@ -452,7 +453,7 @@ input[type="submit"]:hover {
 }
 .bar:before {
   display: block;
-  border-top: 1px #1D1F21 solid;
+  border-top: 1px #F8F8F8 solid;
   width: 5vw;
   position: absolute;
   top: -10px;
@@ -481,7 +482,6 @@ input[type="submit"]:hover {
   width: 100%;
 }
 .deck .overlay {
-  display: none;
   content: " ";
   opacity: 0;
   position: absolute;
@@ -492,7 +492,7 @@ input[type="submit"]:hover {
   -moz-transition: all 0.8s;
   transition: all 0.8s;
 }
-.deck .overlay:hover {
+.deck:hover .overlay {
   opacity: .5;
   -webkit-transition: all 0.8s;
   -moz-transition: all 0.8s;
@@ -531,12 +531,12 @@ body {
   -webkit-animation: fadeIn 300ms ease 800ms forwards;
   -moz-animation: fadeIn 300ms ease 800ms forwards;
   animation: fadeIn 300ms ease 800ms forwards;
-  background: #F8F8F8;
+  background: #1D1F21;
 }
 
 .container {
   padding: 0 0 0 30vw;
-  background-color: #F8F8F8;
+  background-color: #1D1F21;
 }
 .container:hover {
   opacity: .5em;
@@ -569,18 +569,18 @@ body {
 .contact {
   position: absolute;
   left: 11vw;
-  bottom: 15px;
+  bottom: 20vh;
 }
 
 .logo {
   position: absolute;
   left: 11vw;
-  top: 25vh;
+  top: 20vh;
   width: 7vw;
 }
-.logo img {
-  width: 100%;
-  float: left;
+.logo .icon-logo {
+  font-size: 10vh;
+  color: #F8F8F8;
 }
 
 @-webkit-keyframes topExpand {
@@ -609,7 +609,7 @@ body {
 }
 .bar {
   position: absolute;
-  background: #1D1F21;
+  background: #F8F8F8;
   height: 5px;
   top: 15vh;
   width: 100%;
@@ -619,7 +619,7 @@ body {
 }
 .bar:before {
   display: block;
-  border-top: 1px #1D1F21 solid;
+  border-top: 1px #F8F8F8 solid;
   width: 5vw;
   position: absolute;
   top: -10px;
@@ -633,7 +633,7 @@ body {
   height: 100vh;
   left: 0;
   top: 0;
-  background: rgba(248, 248, 248, 0.98);
+  background: rgba(29, 31, 33, 0.98);
   z-index: 1000;
   display: none;
 }
@@ -662,7 +662,7 @@ body {
 .close-contact-form:before {
   content: '\e600';
   font-size: 2em;
-  color: #1D1F21;
+  color: #F8F8F8;
   font-family: "icomoon";
 }
 

@@ -18,13 +18,16 @@ $left-margin: 11vw;
 .contact {
     position:absolute;
     left:$left-margin;
-    bottom:15px;
+    bottom:20vh;
 }
 .logo {
-    img {width:100%; float:left;}  
+    .icon-logo {
+        font-size:10vh;
+        color:$fiveBlack;
+    }
     position:absolute;
     left:$left-margin;
-    top:25vh;
+    top:20vh;
     width:7vw;
 }
 
