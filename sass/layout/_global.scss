@@ -16,7 +16,9 @@ body {
 }
 
 .container {
-    padding:0 0 0 30vw;
+    @include breakpoint($lrg) {
+        padding-left:30vw;
+    }
     background:$fiveWhite;
     &:hover {
         opacity:.5em;

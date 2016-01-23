@@ -8,12 +8,15 @@
 }
 
 #header {
-    position:fixed;
-    top:1vh;
+    position:relative;
     opacity:0;
     z-index:1000;
     width:30vw;
-    height:99vh;
+    margin:auto;
+    @include breakpoint($lrg) {    
+        position:fixed;
+        height:100vh;
+    }
     @include animation(fadeIn 1s ease-in 2.25s forwards);
     h1 {
         display:none;
@@ -29,7 +32,11 @@ $left-margin: 11vw;
 }
 .logo {
     position:relative;
-    top:20vh;
+    padding:5vh 0;
+    @include breakpoint($lrg) {    
+        top:20vh;
+        padding:0;
+    }
     width:100%;
     text-align:center;
 }
@@ -52,6 +59,11 @@ $left-margin: 11vw;
 }
 
 .bar {
+    display:none;
+    @include breakpoint($lrg) {
+        display:block;
+    }
+
     position:absolute;
     opacity:0;
     background:$fiveBlack;
