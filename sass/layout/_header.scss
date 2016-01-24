@@ -8,14 +8,16 @@
 }
 
 #header {
-    position:relative;
+    position:fixed;
     opacity:0;
     z-index:1000;
-    width:30vw;
+    width:100vw;
+    height:15vh;
     margin:auto;
+    background:$fiveBlack;
     @include breakpoint($lrg) {    
-        position:fixed;
         height:100vh;
+        width:30vw;
     }
     @include animation(fadeIn 1s ease-in 2.25s forwards);
     h1 {
@@ -26,22 +28,36 @@
 $left-margin: 11vw;
 
 .contact {
-    position:absolute;
-    left:$left-margin;
-    bottom:20vh;
+    background:$fiveBlack;
+    padding:1em;
+    @include breakpoint($lrg) {    
+        position:absolute;
+        left:$left-margin;
+        bottom:20vh;
+        width:auto; 
+        height:auto;
+        padding:0;
+    }    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width:100%;
 }
 .logo {
+    text-align:center;
     position:relative;
-    padding:5vh 0;
+    padding:2vh;
     @include breakpoint($lrg) {    
         top:20vh;
         padding:0;
     }
     width:100%;
-    text-align:center;
 }
 .icon-logo {
     font-size:10vh;
+    @include breakpoint($lrg) {    
+        font-size:10vh;
+    }    
     color:$fiveBlack;
     &:hover {
         color:$fiveBlack;        

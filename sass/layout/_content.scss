@@ -13,26 +13,18 @@
 	@include animation(fadeIn 800ms ease-in-out 3.5s forwards);
 	width:100%;
 	height:100vh;	
-	&:nth-child(1) {
-		background:red;
-	}		
-	@include breakpoint($lrg) {
-		&:nth-child(1) {
-			height:auto;
-		}
-	}
 	display: table;
-	padding:10px;
+	//padding:10px;
 
 	.copy {
 		width:70%;			
 		margin:auto;
 		display:block;
 		text-align:center;
+		width:100%;
+	    display: table-cell;
+	    vertical-align: middle;		
 		@include breakpoint($lrg) {
-			width:100%;
-		    display: table-cell;
-		    vertical-align: middle;		
 		    text-align:left;
 		}		
 		h2 {
@@ -45,16 +37,11 @@
 		opacity:0;
 		@include transition(all 0.8s);
 		width:100%;
-		height:10%;
-		top:45%;
-		// background:red;
 		z-index:1;
 		position:relative;
 		margin:auto;
 		text-align:center;
-		svg {
-			width:20vw;
-		}
+		vertical-align: middle;
 	}
 	.background {
 		position:absolute;
@@ -96,11 +83,15 @@
 		width:50%;
 		float:left;
 		height:50vh;
+		.branding {
+			top:20vh;
+		}		
 	}
 }
 
-.icon-yc {font-size:20vh;}
-.icon-idwt {font-size:20vh;}
-.icon-futo {font-size:5vh;}
-.icon-tk {font-size:3vh;}
-.icon-purebar {font-size:10vh;}
+.icon-yc {font-size:20vh;top:40vh}
+.icon-idwt {font-size:20vh;top:40vh}
+.icon-futo {font-size:5vh;top:47vh}
+.icon-cel {font-size:10vh;top:45vh;}
+.icon-tk {font-size:3vh;top:48vh}
+.icon-purebar {font-size:10vh;top:45vh}

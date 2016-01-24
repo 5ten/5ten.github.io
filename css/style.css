@@ -409,19 +409,21 @@ input[type="submit"]:hover {
   }
 }
 #header {
-  position: relative;
+  position: fixed;
   opacity: 0;
   z-index: 1000;
-  width: 30vw;
+  width: 100vw;
+  height: 15vh;
   margin: auto;
+  background: #1D1F21;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
   -moz-animation: fadeIn 1s ease-in 2.25s forwards;
   animation: fadeIn 1s ease-in 2.25s forwards;
 }
 @media screen and (min-width: 53.75em) {
   #header {
-    position: fixed;
     height: 100vh;
+    width: 30vw;
   }
 }
 #header h1 {
@@ -429,16 +431,29 @@ input[type="submit"]:hover {
 }
 
 .contact {
-  position: absolute;
-  left: 11vw;
-  bottom: 20vh;
+  background: #1D1F21;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+@media screen and (min-width: 53.75em) {
+  .contact {
+    position: absolute;
+    left: 11vw;
+    bottom: 20vh;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
 }
 
 .logo {
-  position: relative;
-  padding: 5vh 0;
-  width: 100%;
   text-align: center;
+  position: relative;
+  padding: 2vh;
+  width: 100%;
 }
 @media screen and (min-width: 53.75em) {
   .logo {
@@ -450,6 +465,11 @@ input[type="submit"]:hover {
 .icon-logo {
   font-size: 10vh;
   color: #1D1F21;
+}
+@media screen and (min-width: 53.75em) {
+  .icon-logo {
+    font-size: 10vh;
+  }
 }
 .icon-logo:hover {
   color: #1D1F21;
@@ -546,27 +566,18 @@ input[type="submit"]:hover {
   width: 100%;
   height: 100vh;
   display: table;
-  padding: 10px;
-}
-.deck:nth-child(1) {
-  background: red;
-}
-@media screen and (min-width: 53.75em) {
-  .deck:nth-child(1) {
-    height: auto;
-  }
 }
 .deck .copy {
   width: 70%;
   margin: auto;
   display: block;
   text-align: center;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
 }
 @media screen and (min-width: 53.75em) {
   .deck .copy {
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
     text-align: left;
   }
 }
@@ -580,15 +591,11 @@ input[type="submit"]:hover {
   -moz-transition: all 0.8s;
   transition: all 0.8s;
   width: 100%;
-  height: 10%;
-  top: 45%;
   z-index: 1;
   position: relative;
   margin: auto;
   text-align: center;
-}
-.deck .branding svg {
-  width: 20vw;
+  vertical-align: middle;
 }
 .deck .background {
   position: absolute;
@@ -634,25 +641,39 @@ input[type="submit"]:hover {
     float: left;
     height: 50vh;
   }
+  .deck:nth-child(5) .branding,
+  .deck:nth-child(6) .branding {
+    top: 20vh;
+  }
 }
 .icon-yc {
   font-size: 20vh;
+  top: 40vh;
 }
 
 .icon-idwt {
   font-size: 20vh;
+  top: 40vh;
 }
 
 .icon-futo {
   font-size: 5vh;
+  top: 47vh;
+}
+
+.icon-cel {
+  font-size: 10vh;
+  top: 45vh;
 }
 
 .icon-tk {
   font-size: 3vh;
+  top: 48vh;
 }
 
 .icon-purebar {
   font-size: 10vh;
+  top: 45vh;
 }
 
 @-webkit-keyframes fadeIn {
@@ -736,19 +757,21 @@ body {
   }
 }
 #header {
-  position: relative;
+  position: fixed;
   opacity: 0;
   z-index: 1000;
-  width: 30vw;
+  width: 100vw;
+  height: 15vh;
   margin: auto;
+  background: #1D1F21;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
   -moz-animation: fadeIn 1s ease-in 2.25s forwards;
   animation: fadeIn 1s ease-in 2.25s forwards;
 }
 @media screen and (min-width: 53.75em) {
   #header {
-    position: fixed;
     height: 100vh;
+    width: 30vw;
   }
 }
 #header h1 {
@@ -756,16 +779,29 @@ body {
 }
 
 .contact {
-  position: absolute;
-  left: 11vw;
-  bottom: 20vh;
+  background: #1D1F21;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+@media screen and (min-width: 53.75em) {
+  .contact {
+    position: absolute;
+    left: 11vw;
+    bottom: 20vh;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
 }
 
 .logo {
-  position: relative;
-  padding: 5vh 0;
-  width: 100%;
   text-align: center;
+  position: relative;
+  padding: 2vh;
+  width: 100%;
 }
 @media screen and (min-width: 53.75em) {
   .logo {
@@ -777,6 +813,11 @@ body {
 .icon-logo {
   font-size: 10vh;
   color: #1D1F21;
+}
+@media screen and (min-width: 53.75em) {
+  .icon-logo {
+    font-size: 10vh;
+  }
 }
 .icon-logo:hover {
   color: #1D1F21;
