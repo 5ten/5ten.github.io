@@ -8,6 +8,12 @@ body.night
 	a {
 		color: $fiveWhite;		
 	}
+	#header, #footer {
+		background:$fiveBlack;
+	} 
+	.contact {
+	    background:$fiveBlack;
+	}
 	.container {
 		background:$fiveBlack;
 	}

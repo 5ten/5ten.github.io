@@ -14,7 +14,9 @@
     width:100vw;
     height:13vh;
     margin:auto;
-    @include breakpoint($lrg) {    
+    background:$fiveWhite;
+    @include breakpoint($lrg) {
+    background:transparent;    
         height:100vh;
         width:30vw;
     }
@@ -27,7 +29,7 @@
 $left-margin: 11vw;
 
 .contact {
-    background:$fiveBlack;
+    background:$fiveWhite;
     padding:1em;
     @include breakpoint($lrg) {    
         position:absolute;

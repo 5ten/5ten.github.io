@@ -415,12 +415,14 @@ input[type="submit"]:hover {
   width: 100vw;
   height: 13vh;
   margin: auto;
+  background: #F8F8F8;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
   -moz-animation: fadeIn 1s ease-in 2.25s forwards;
   animation: fadeIn 1s ease-in 2.25s forwards;
 }
 @media screen and (min-width: 53.75em) {
   #header {
+    background: transparent;
     height: 100vh;
     width: 30vw;
   }
@@ -430,7 +432,7 @@ input[type="submit"]:hover {
 }
 
 .contact {
-  background: #1D1F21;
+  background: #F8F8F8;
   padding: 1em;
   position: fixed;
   bottom: 0;
@@ -762,12 +764,14 @@ body {
   width: 100vw;
   height: 13vh;
   margin: auto;
+  background: #F8F8F8;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
   -moz-animation: fadeIn 1s ease-in 2.25s forwards;
   animation: fadeIn 1s ease-in 2.25s forwards;
 }
 @media screen and (min-width: 53.75em) {
   #header {
+    background: transparent;
     height: 100vh;
     width: 30vw;
   }
@@ -777,7 +781,7 @@ body {
 }
 
 .contact {
-  background: #1D1F21;
+  background: #F8F8F8;
   padding: 1em;
   position: fixed;
   bottom: 0;
@@ -933,6 +937,12 @@ body.night {
 }
 body.night a {
   color: #F8F8F8;
+}
+body.night #header, body.night #footer {
+  background: #1D1F21;
+}
+body.night .contact {
+  background: #1D1F21;
 }
 body.night .container {
   background: #1D1F21;
