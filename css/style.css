@@ -415,7 +415,6 @@ input[type="submit"]:hover {
   width: 100vw;
   height: 13vh;
   margin: auto;
-  background: #1D1F21;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
   -moz-animation: fadeIn 1s ease-in 2.25s forwards;
   animation: fadeIn 1s ease-in 2.25s forwards;
@@ -569,10 +568,10 @@ input[type="submit"]:hover {
   display: table;
 }
 .deck .copy {
-  width: 60%;
   margin: auto;
   display: block;
   text-align: center;
+  width: 100%;
   display: table-cell;
   vertical-align: middle;
 }
@@ -763,7 +762,6 @@ body {
   width: 100vw;
   height: 13vh;
   margin: auto;
-  background: #1D1F21;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
   -moz-animation: fadeIn 1s ease-in 2.25s forwards;
   animation: fadeIn 1s ease-in 2.25s forwards;
