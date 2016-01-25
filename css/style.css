@@ -413,7 +413,7 @@ input[type="submit"]:hover {
   opacity: 0;
   z-index: 1000;
   width: 100vw;
-  height: 15vh;
+  height: 13vh;
   margin: auto;
   background: #1D1F21;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
@@ -450,20 +450,21 @@ input[type="submit"]:hover {
 }
 
 .logo {
-  text-align: center;
+  text-align: left;
   position: relative;
-  padding: 2vh;
+  padding: 3vh;
   width: 100%;
 }
 @media screen and (min-width: 53.75em) {
   .logo {
+    text-align: center;
     top: 20vh;
     padding: 0;
   }
 }
 
 .icon-logo {
-  font-size: 10vh;
+  font-size: 6vh;
   color: #1D1F21;
 }
 @media screen and (min-width: 53.75em) {
@@ -568,11 +569,10 @@ input[type="submit"]:hover {
   display: table;
 }
 .deck .copy {
-  width: 70%;
+  width: 60%;
   margin: auto;
   display: block;
   text-align: center;
-  width: 100%;
   display: table-cell;
   vertical-align: middle;
 }
@@ -761,7 +761,7 @@ body {
   opacity: 0;
   z-index: 1000;
   width: 100vw;
-  height: 15vh;
+  height: 13vh;
   margin: auto;
   background: #1D1F21;
   -webkit-animation: fadeIn 1s ease-in 2.25s forwards;
@@ -798,20 +798,21 @@ body {
 }
 
 .logo {
-  text-align: center;
+  text-align: left;
   position: relative;
-  padding: 2vh;
+  padding: 3vh;
   width: 100%;
 }
 @media screen and (min-width: 53.75em) {
   .logo {
+    text-align: center;
     top: 20vh;
     padding: 0;
   }
 }
 
 .icon-logo {
-  font-size: 10vh;
+  font-size: 6vh;
   color: #1D1F21;
 }
 @media screen and (min-width: 53.75em) {
@@ -897,9 +898,15 @@ body {
 .contact-form {
   position: relative;
   display: block;
-  width: 35%;
-  margin-left: 32.5%;
-  margin-top: 15vh;
+  padding: 5vh;
+}
+@media screen and (min-width: 53.75em) {
+  .contact-form {
+    width: 35%;
+    margin-left: 32.5%;
+    margin-top: 15vh;
+    padding: 0;
+  }
 }
 
 .form-copy {
@@ -908,19 +915,25 @@ body {
 
 .close-contact-form {
   position: absolute;
-  top: -20px;
-  right: -50px;
-  cursor: pointer;
+  right: 12vw;
+  top: 6vh;
 }
-.close-contact-form:before {
-  content: '\e600';
-  font-size: 2em;
+@media screen and (min-width: 53.75em) {
+  .close-contact-form {
+    right: 0;
+    top: 0;
+  }
+}
+
+a {
   color: #1D1F21;
-  font-family: "icomoon";
 }
 
 body.night {
   background: #1D1F21;
+  color: #F8F8F8;
+}
+body.night a {
   color: #F8F8F8;
 }
 body.night .container {

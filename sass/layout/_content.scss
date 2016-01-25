@@ -17,11 +17,10 @@
 	//padding:10px;
 
 	.copy {
-		width:70%;			
+		width:60%;			
 		margin:auto;
 		display:block;
 		text-align:center;
-		width:100%;
 	    display: table-cell;
 	    vertical-align: middle;		
 		@include breakpoint($lrg) {

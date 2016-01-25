@@ -12,7 +12,7 @@
     opacity:0;
     z-index:1000;
     width:100vw;
-    height:15vh;
+    height:13vh;
     margin:auto;
     background:$fiveBlack;
     @include breakpoint($lrg) {    
@@ -44,17 +44,18 @@ $left-margin: 11vw;
     width:100%;
 }
 .logo {
-    text-align:center;
+    text-align:left;
     position:relative;
-    padding:2vh;
+    padding:3vh;
     @include breakpoint($lrg) {    
+        text-align:center;
         top:20vh;
         padding:0;
     }
     width:100%;
 }
 .icon-logo {
-    font-size:10vh;
+    font-size:6vh;
     @include breakpoint($lrg) {    
         font-size:10vh;
     }    

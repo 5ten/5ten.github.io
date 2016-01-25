@@ -14,22 +14,23 @@
 .contact-form {
     position:relative;
     display:block;
-    width:35%;
-    margin-left:32.5%;
-    margin-top:15vh;
+    padding:5vh;
+    @include breakpoint($lrg) {
+        width:35%;
+        margin-left:32.5%;
+        margin-top:15vh;        
+        padding:0;
+    }
 }
 .form-copy {
     margin-bottom:1em;
 }
 .close-contact-form {
     position:absolute;
-    top:-20px;
-    right:-50px;
-    cursor:pointer;
-    &:before {
-        content:'\e600';
-        font-size:2em;
-        color:$fiveBlack;
-        font-family:"icomoon";
+    right:12vw;
+    top:6vh;
+    @include breakpoint($lrg) {
+        right:0;
+        top:0;
     }
 }
