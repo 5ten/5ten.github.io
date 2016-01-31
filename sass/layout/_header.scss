@@ -15,7 +15,7 @@
     height:13vh;
     margin:auto;
     background:$fiveWhite;
-    @include breakpoint($lrg) {
+    @include media($lrg) {
     background:transparent;    
         height:100vh;
         width:30vw;
@@ -31,7 +31,7 @@ $left-margin: 11vw;
 .contact {
     background:$fiveWhite;
     padding:1em;
-    @include breakpoint($lrg) {    
+    @include media($lrg) {    
         position:absolute;
         left:$left-margin;
         bottom:20vh;
@@ -48,7 +48,7 @@ $left-margin: 11vw;
     text-align:left;
     position:relative;
     padding:3vh;
-    @include breakpoint($lrg) {    
+    @include media($lrg) {    
         text-align:center;
         top:20vh;
         padding:0;
@@ -57,7 +57,7 @@ $left-margin: 11vw;
 }
 .icon-logo {
     font-size:6vh;
-    @include breakpoint($lrg) {    
+    @include media($lrg) {    
         font-size:10vh;
     }    
     color:$fiveBlack;
@@ -78,7 +78,7 @@ $left-margin: 11vw;
 
 .bar {
     display:none;
-    @include breakpoint($lrg) {
+    @include media($lrg) {
         display:block;
     }
 

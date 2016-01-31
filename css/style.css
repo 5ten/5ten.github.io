@@ -567,19 +567,20 @@ input[type="submit"]:hover {
   animation: fadeIn 800ms ease-in-out 3.5s forwards;
   width: 100%;
   height: 100vh;
-  display: table;
 }
 .deck .copy {
   margin: auto;
   display: block;
   text-align: center;
-  width: 100%;
-  display: table-cell;
-  vertical-align: middle;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 10%;
 }
 @media screen and (min-width: 53.75em) {
   .deck .copy {
     text-align: left;
+    padding: 0 20% 0 0;
   }
 }
 .deck .copy h2 {
@@ -596,7 +597,8 @@ input[type="submit"]:hover {
   position: relative;
   margin: auto;
   text-align: center;
-  vertical-align: middle;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .deck .background {
   position: absolute;
@@ -642,39 +644,29 @@ input[type="submit"]:hover {
     float: left;
     height: 50vh;
   }
-  .deck:nth-child(5) .branding,
-  .deck:nth-child(6) .branding {
-    top: 20vh;
-  }
 }
 .icon-yc {
   font-size: 20vh;
-  top: 40vh;
 }
 
 .icon-idwt {
   font-size: 20vh;
-  top: 40vh;
 }
 
 .icon-futo {
   font-size: 5vh;
-  top: 47vh;
 }
 
 .icon-cel {
   font-size: 10vh;
-  top: 45vh;
 }
 
 .icon-tk {
   font-size: 3vh;
-  top: 48vh;
 }
 
 .icon-purebar {
   font-size: 10vh;
-  top: 45vh;
 }
 
 @-webkit-keyframes fadeIn {

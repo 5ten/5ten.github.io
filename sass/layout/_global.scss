@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    @include breakpoint($lrg) {
+    @include media($lrg) {
         padding-left:30vw;
     }
     background:$fiveWhite;
