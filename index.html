@@ -116,12 +116,19 @@
                 <h2 class="form-copy">
                     Hello. 
                 </h2>
-                <form id="contact-form" action="https://formspree.io/peter@510interactive.com"
+                <form id="contact-form" action="//formspree.io/peter@510interactive.com"
                       method="POST">
-                    <input type="text" name="name" placeholder="Your Name">
-                    <input type="email" name="_replyto" placeholder="Your Email">
-                    <textarea name="_message" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send">
+
+                <input type="text" name="Name" placeholder="Name" required>
+                <input type="email" name="Email" placeholder="Email" required>
+                <textarea name="Message" cols="30" rows="6" placeholder="Message" required></textarea>
+                <!-- CONFIG -->
+                <input class="is-hidden" type="text" name="_gotcha">
+                <input type="hidden" name="_subject" value="Subject">
+                <input type="hidden" name="_cc" value="email@cc.com">
+                <!-- /CONFIG -->
+                <input class="submit" type="submit" value="Send">
+
                 </form>
             </div>
         </div>
