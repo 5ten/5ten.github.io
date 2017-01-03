@@ -55,7 +55,7 @@ module.exports = function(grunt) {
   });
   grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-wiredep');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['sass', 'watch']);
