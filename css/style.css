@@ -362,11 +362,11 @@ input[type="submit"] {
 .logo {
   text-align: left;
   position: relative;
-  padding: 3vh;
+  padding: 2vh;
   width: 100%; }
 
 .icon-logo {
-  font-size: 6vh;
+  font-size: 4vh;
   color: #1D1F21; }
   .icon-logo:hover {
     color: #1D1F21; }
@@ -450,6 +450,9 @@ input[type="submit"] {
     top: 50%;
     transform: translateY(-50%);
     padding: 0 10%; }
+    @media screen and (min-width: 53.75em) {
+      .deck .copy {
+        padding: 0 20%; } }
     .deck .copy h2 {
       font-size: 5vh;
       width: 100%; }
@@ -618,11 +621,11 @@ body {
 .logo {
   text-align: left;
   position: relative;
-  padding: 3vh;
+  padding: 2vh;
   width: 100%; }
 
 .icon-logo {
-  font-size: 6vh;
+  font-size: 4vh;
   color: #1D1F21; }
   .icon-logo:hover {
     color: #1D1F21; }
