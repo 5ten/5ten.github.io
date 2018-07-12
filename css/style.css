@@ -726,9 +726,11 @@ body.night {
     background: #1D1F21; }
   body.night .container {
     background: #1D1F21; }
-  body.night .icon-logo {
+  body.night .branding {
     color: #F8F8F8; }
-    body.night .icon-logo:hover {
+    body.night .branding:before {
+      color: #F8F8F8; }
+    body.night .branding:hover {
       color: #F8F8F8; }
   body.night .bar {
     background: #F8F8F8; }

@@ -17,8 +17,9 @@ body.night
 	.container {
 		background:$fiveBlack;
 	}
-	.icon-logo {
+	.branding {
 		color: $fiveWhite;
+		&:before {color: $fiveWhite;}
 	    &:hover {
 	        color:$fiveWhite;
 	    }		
@@ -49,4 +50,5 @@ body.night
         color:$fiveWhite;
     	}
 	}
+
 }
