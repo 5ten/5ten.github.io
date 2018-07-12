@@ -12,33 +12,33 @@
     opacity:0;
     z-index:1000;
     width:100vw;
-    height:13vh;
+    height:10vh;
     margin:auto;
     background:$fiveWhite;
-    @include media($lrg) {
-    background:transparent;    
-        height:100vh;
-        width:30vw;
-    }
+    // @include media($lrg) {
+    // background:transparent;    
+    //     height:100vh;
+    //     width:30vw;
+    // }
     @include animation(fadeIn 1s ease-in 2.25s forwards);
     h1 {
         display:none;
     }
 }
 
-$left-margin: 11vw;
+$left-margin: 0;
 
 .contact {
     background:$fiveWhite;
     padding:1em;
-    @include media($lrg) {    
-        position:absolute;
-        left:$left-margin;
-        bottom:20vh;
-        width:auto; 
-        height:auto;
-        padding:0;
-    }    
+    // @include media($lrg) {    
+    //     position:absolute;
+    //     left:$left-margin;
+    //     bottom:20vh;
+    //     width:auto; 
+    //     height:auto;
+    //     padding:0;
+    // }    
     position: fixed;
     bottom: 0;
     left: 0;
@@ -48,18 +48,18 @@ $left-margin: 11vw;
     text-align:left;
     position:relative;
     padding:3vh;
-    @include media($lrg) {    
-        text-align:center;
-        top:20vh;
-        padding:0;
-    }
+    // @include media($lrg) {    
+    //     text-align:center;
+    //     top:20vh;
+    //     padding:0;
+    // }
     width:100%;
 }
 .icon-logo {
     font-size:6vh;
-    @include media($lrg) {    
-        font-size:10vh;
-    }    
+    // @include media($lrg) {    
+    //     font-size:10vh;
+    // }    
     color:$fiveBlack;
     &:hover {
         color:$fiveBlack;        
@@ -78,15 +78,15 @@ $left-margin: 11vw;
 
 .bar {
     display:none;
-    @include media($lrg) {
-        display:block;
-    }
+    // @include media($lrg) {
+    //     display:block;
+    // }
 
     position:absolute;
     opacity:0;
     background:$fiveBlack;
     height:5px;
-    top:15vh;
+    top:5vh;
     width:100%;
     @include animation(topExpand 1s ease-in-out 1s forwards);
     &:before {

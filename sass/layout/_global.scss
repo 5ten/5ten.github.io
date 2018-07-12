@@ -17,7 +17,7 @@ body {
 
 .container {
     @include media($lrg) {
-        padding-left:30vw;
+        //padding-left:30vw;
     }
     background:$fiveWhite;
     &:hover {
