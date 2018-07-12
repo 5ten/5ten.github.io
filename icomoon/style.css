@@ -1,52 +1,63 @@
 @font-face {
-    font-family: 'icomoon';
-    src:    url('fonts/icomoon.eot?4kshh4');
-    src:    url('fonts/icomoon.eot?4kshh4#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.woff2?4kshh4') format('woff2'),
-        url('fonts/icomoon.ttf?4kshh4') format('truetype'),
-        url('fonts/icomoon.woff?4kshh4') format('woff'),
-        url('fonts/icomoon.svg?4kshh4#icomoon') format('svg');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?a3iyqn');
+  src:  url('fonts/icomoon.eot?a3iyqn#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.woff2?a3iyqn') format('woff2'),
+    url('fonts/icomoon.ttf?a3iyqn') format('truetype'),
+    url('fonts/icomoon.woff?a3iyqn') format('woff'),
+    url('fonts/icomoon.svg?a3iyqn#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'icomoon' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
 
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ss:before {
+  content: "\e90a";
+}
+.icon-jw:before {
+  content: "\e908";
+}
+.icon-gotts:before {
+  content: "\e909";
+}
 .icon-cel:before {
-    content: "\e902";
+  content: "\e902";
 }
 .icon-idwt:before {
-    content: "\e903";
+  content: "\e903";
 }
 .icon-purebar:before {
-    content: "\e904";
+  content: "\e904";
 }
 .icon-yc:before {
-    content: "\e905";
+  content: "\e905";
+  color: #0069aa;
 }
 .icon-tk:before {
-    content: "\e906";
+  content: "\e906";
+  color: #002f65;
 }
 .icon-futo:before {
-    content: "\e907";
+  content: "\e907";
+  color: #f8ffff;
 }
 .icon-logo:before {
-    content: "\e901";
+  content: "\e901";
 }
 .icon-cross:before {
-    content: "\e900";
+  content: "\e900";
 }
-

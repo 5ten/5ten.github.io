@@ -42,6 +42,7 @@
 		text-align:center;
 		top: 50%;
 		transform: translateY(-50%);
+		&:before {color: #000;}
 	}
 	.background {
 		position:absolute;
@@ -73,17 +74,17 @@
 }
 
 @include media($lrg) {
+	.deck:nth-child(3),
 	.deck:nth-child(4),
-	.deck:nth-child(5) {
-		width:50%;
-		float:left;
-	}
-	.deck:nth-child(5),
-	.deck:nth-child(6) {
+	.deck:nth-child(6),
+	.deck:nth-child(7),
+	.deck:nth-child(9),
+	.deck:nth-child(10) {
 		width:50%;
 		float:left;
 		height:50vh;
 	}
+
 }
 
 .icon-yc {font-size:20vh;}
@@ -92,3 +93,7 @@
 .icon-cel {font-size:10vh;}
 .icon-tk {font-size:3vh;}
 .icon-purebar {font-size:10vh;}
+.icon-jw {font-size:7vh;}
+.icon-gotts {font-size:5vh;}
+.icon-km {font-size:10vh;}
+.icon-ss {font-size:3vh;}

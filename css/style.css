@@ -286,7 +286,7 @@ input[type="submit"] {
   -moz-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out; }
   .button:hover, button:hover,
-  input[type="submit"]:hover {
+  input:hover[type="submit"] {
     padding: 0.5em 1.125em;
     background: #1D1F21;
     color: #F8F8F8; }
@@ -493,6 +493,8 @@ input[type="submit"] {
     text-align: center;
     top: 50%;
     transform: translateY(-50%); }
+    .deck .branding:before {
+      color: #000; }
   .deck .background {
     position: absolute;
     background-size: cover;
@@ -521,12 +523,12 @@ input[type="submit"] {
       transition: all 0.8s; }
 
 @media screen and (min-width: 53.75em) {
+  .deck:nth-child(3),
   .deck:nth-child(4),
-  .deck:nth-child(5) {
-    width: 50%;
-    float: left; }
-  .deck:nth-child(5),
-  .deck:nth-child(6) {
+  .deck:nth-child(6),
+  .deck:nth-child(7),
+  .deck:nth-child(9),
+  .deck:nth-child(10) {
     width: 50%;
     float: left;
     height: 50vh; } }
@@ -548,6 +550,18 @@ input[type="submit"] {
 
 .icon-purebar {
   font-size: 10vh; }
+
+.icon-jw {
+  font-size: 7vh; }
+
+.icon-gotts {
+  font-size: 5vh; }
+
+.icon-km {
+  font-size: 10vh; }
+
+.icon-ss {
+  font-size: 3vh; }
 
 @-webkit-keyframes fadeIn {
   from {
@@ -772,13 +786,13 @@ body.night {
     background: #F8F8F8; }
   body.night .bar:before {
     border-color: #F8F8F8; }
-  body.night .button, body.night button, body.night
-  input[type="submit"] {
+  body.night .button, body.night button,
+  body.night input[type="submit"] {
     border-color: #F8F8F8;
     color: #F8F8F8;
     background: #1D1F21; }
-    body.night .button:hover, body.night button:hover, body.night
-    input[type="submit"]:hover {
+    body.night .button:hover, body.night button:hover,
+    body.night input:hover[type="submit"] {
       background: #F8F8F8;
       color: #1D1F21; }
   body.night .deck .background:before {
