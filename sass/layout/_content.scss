@@ -12,7 +12,7 @@
     opacity:0;
 	@include animation(fadeIn 800ms ease-in-out 3.5s forwards);
 	width:100%;
-	height:100vh;	
+	height:80vh;	
 
 	.copy {
 		margin:auto;
@@ -33,7 +33,7 @@
 	}
 		
 	.branding {
-		opacity:0;
+		opacity:1;
 		@include transition(all 0.8s);
 		width:100%;
 		z-index:1;
@@ -51,9 +51,10 @@
 		background-position: center center;
 		width:100%;
 		height:100%;
+		@include transition(all 15s);				
 		&:before {
 			content:" ";
-			opacity:0;
+			opacity:1;
 			position:absolute;
 			width:100%;
 			height:100vh;
@@ -62,11 +63,11 @@
 		}
 		&:hover {
 			&:before {
-				opacity:1;
+				opacity:0;
 				@include transition(all 0.8s);
 			}
 			.branding {
-				opacity:1;
+				opacity:0;
 				@include transition(all 0.8s);
 			}
 		}		
@@ -91,7 +92,10 @@
 .icon-idwt {font-size:20vh;}
 .icon-futo {font-size:5vh;}
 .icon-cel {font-size:10vh;}
-.icon-tk {font-size:3vh;}
+.icon-tk {font-size:2vh;}
+@include media($lrg) {
+	.icon-tk {font-size:3vh;}
+}
 .icon-purebar {font-size:10vh;}
 .icon-jw {font-size:7vh;}
 .icon-gotts {font-size:5vh;}
