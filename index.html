@@ -1,194 +1,1737 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="//510interactive.tumblr.com/api/read/json"></script>
-        <script>            
-            console.log(tumblr_api_read);
-        </script>
-        <link rel="stylesheet" href="css/style.css">
-        <script src="//use.typekit.net/nmv4ril.js"></script>
-        <script>try{Typekit.load();}catch(e){}</script>
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <header id="header">
-            <div class="logo">
-                <a href="/" class="icon-logo"><h1>510interactive</h1></a>
-            </div>
-            <div class="contact">
-                <a id="contactButton" class="button">Contact</a>
-            </div>
-        </header>
-        <!-- END HEADER  -->
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>510 Interactive — Senior Digital Problem-Solvers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ── RESET & BASE ─────────────────────────────────────────────────────────── */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #ffffff;
+            color: #1a2332;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ── CSS VARIABLES ────────────────────────────────────────────────────────── */
+        :root {
+            --navy: #0f2137;
+            --navy-light: #1a3050;
+            --blue: #1e5fad;
+            --blue-light: #2d74cc;
+            --text: #1a2332;
+            --muted: #64748b;
+            --border: #e1e8f0;
+            --bg-light: #f6f9fc;
+            --bg-dark: #0a1929;
+            --white: #ffffff;
+            --max-w: 1200px;
+            --px: clamp(1.25rem, 4vw, 3rem);
+            --section-py: clamp(4rem, 8vw, 7rem);
+        }
+
+        /* ── LAYOUT UTILITIES ─────────────────────────────────────────────────────── */
+        .container {
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 var(--px);
+        }
+
+        .section-pad {
+            padding-block: var(--section-py);
+        }
+
+        /* ── PAGE TRANSITIONS ─────────────────────────────────────────────────────── */
+        #app {
+            min-height: calc(100vh - 68px);
+        }
+
+        .page {
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── NAVIGATION ───────────────────────────────────────────────────────────── */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            transition: box-shadow 0.2s;
+        }
+
+        .site-nav.scrolled {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 68px;
+            max-width: var(--max-w);
+            margin: 0 auto;
+            padding: 0 var(--px);
+        }
+
+        .nav-logo {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        .nav-logo img { 
+            height: 2rem;
+            width: auto;
+        }
+
+
+        .nav-logo span {
+            color: var(--blue);
+            display: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color 0.15s;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--navy);
+        }
+
+        .nav-links .nav-contact {
+            padding: 0.5rem 1.25rem;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+
+        .nav-links .nav-contact:hover {
+            background: var(--navy-light);
+            color: var(--white);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--navy);
+            transition: 0.2s;
+            border-radius: 2px;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            inset: 68px 0 0 0;
+            background: var(--white);
+            z-index: 99;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* ── HERO ─────────────────────────────────────────────────────────────────── */
+        .hero {
+            padding-top: clamp(4rem, 10vw, 8rem);
+            padding-bottom: clamp(4rem, 10vw, 8rem);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10%;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(ellipse at 70% 50%, rgba(30, 95, 173, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 1.75rem;
+        }
+
+        .hero-eyebrow::before {
+            content: '';
+            width: 2rem;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.75rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            color: var(--navy);
+            max-width: 14ch;
+            margin-bottom: 1.75rem;
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--blue);
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--muted);
+            max-width: 52ch;
+            line-height: 1.65;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 6px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            transition: background 0.15s, transform 0.1s;
+        }
+
+        .btn-primary:hover {
+            background: var(--navy-light);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            background: transparent;
+            color: var(--navy);
+            border: 1.5px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--blue);
+            background: var(--bg-light);
+        }
+
+        .arrow {
+            transition: transform 0.15s;
+        }
+
+        .btn-primary:hover .arrow,
+        .btn-secondary:hover .arrow {
+            transform: translateX(3px);
+        }
+
+        /* ── POSITIONING STRIP ────────────────────────────────────────────────────── */
+        .positioning {
+            padding: clamp(3rem, 6vw, 5rem) 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            background: var(--bg-light);
+        }
+
+        .positioning p {
+            font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+            color: var(--text);
+            line-height: 1.7;
+            max-width: 70ch;
+            font-weight: 400;
+        }
+
+        .positioning p+p {
+            margin-top: 1.25rem;
+        }
+
+        .positioning strong {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* ── DIFFERENTIATORS ──────────────────────────────────────────────────────── */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .diff-item {}
+
+        .diff-number {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 0.875rem;
+            display: block;
+        }
+
+        .diff-item h3 {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.625rem;
+            line-height: 1.3;
+        }
+
+        .diff-item p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ── SECTION HEADINGS ─────────────────────────────────────────────────────── */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            width: 1.5rem;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.025em;
+            color: var(--navy);
+        }
+
+        .section-desc {
+            margin-top: 1rem;
+            font-size: 1.0625rem;
+            color: var(--muted);
+            max-width: 58ch;
+            line-height: 1.65;
+        }
+
+        /* ── CASE STUDY CARDS ─────────────────────────────────────────────────────── */
+        .cs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5px;
+            background: var(--border);
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .cs-card {
+            background: var(--white);
+            padding: 2.25rem 2rem;
+            cursor: pointer;
+            transition: background 0.15s;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+
+        .cs-card:hover {
+            background: var(--bg-light);
+        }
+
+        .cs-sector {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+        }
+
+        .cs-card h3 {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.35;
+            flex: 1;
+        }
+
+        .cs-card p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.55;
+        }
+
+        .cs-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--blue);
+            margin-top: 0.5rem;
+            transition: gap 0.15s;
+        }
+
+        .cs-card:hover .cs-link {
+            gap: 0.625rem;
+        }
+
+        /* ── HOW WE WORK ──────────────────────────────────────────────────────────── */
+        .how-bg {
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .how-bg .section-eyebrow {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .how-bg .section-eyebrow::before {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .how-bg .section-title {
+            color: var(--white);
+        }
+
+        .how-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 3.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .how-step {
+            padding: 2.5rem 2rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+        }
+
+        .how-step:last-child {
+            border-right: none;
+        }
+
+        .how-num {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.08);
+            letter-spacing: -0.04em;
+            margin-bottom: 1.5rem;
+        }
+
+        .how-step h3 {
+            font-size: 1.0625rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .how-step p {
+            font-size: 0.9375rem;
+            color: rgba(255, 255, 255, 0.55);
+            line-height: 1.65;
+        }
+
+        .how-note {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+            text-align: center;
+        }
+
+        .how-note strong {
+            color: rgba(255, 255, 255, 0.7);
+            font-style: normal;
+        }
+
+        /* ── HOME CTA ─────────────────────────────────────────────────────────────── */
+        .home-cta {
+            background: var(--bg-light);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            padding-block: clamp(4rem, 8vw, 6rem);
+        }
+
+        .home-cta h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: var(--navy);
+            max-width: 20ch;
+            margin: 0 auto 1.25rem;
+        }
+
+        .home-cta p {
+            font-size: 1.0625rem;
+            color: var(--muted);
+            max-width: 52ch;
+            margin: 0 auto 2.5rem;
+            line-height: 1.65;
+        }
+
+        /* ── PAGE HEADERS ─────────────────────────────────────────────────────────── */
+        .page-header {
+            padding: clamp(3rem, 6vw, 5rem) 0 clamp(2rem, 4vw, 3rem);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .page-header .eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .page-header .eyebrow::before {
+            content: '';
+            width: 1.5rem;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .page-header h1 {
+            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+
+        .page-header p {
+            margin-top: 1rem;
+            font-size: 1.0625rem;
+            color: var(--muted);
+            max-width: 56ch;
+            line-height: 1.65;
+        }
+
+        /* ── WORK PAGE / CASE STUDY LIST ─────────────────────────────────────────── */
+        .cs-list {
+            margin-top: 3rem;
+        }
+
+        .cs-list-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            gap: 2rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: background 0.15s;
+            border-radius: 4px;
+        }
+
+        .cs-list-item:hover .cs-list-title {
+            color: var(--blue);
+        }
+
+        .cs-list-item:hover .cs-list-arrow {
+            transform: translateX(4px);
+            opacity: 1;
+        }
+
+        .cs-list-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .cs-list-sector {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue);
+        }
+
+        .cs-list-title {
+            font-size: 1.1875rem;
+            font-weight: 700;
+            color: var(--navy);
+            transition: color 0.15s;
+            line-height: 1.3;
+        }
+
+        .cs-list-summary {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.55;
+            max-width: 58ch;
+        }
+
+        .cs-list-arrow {
+            font-size: 1.25rem;
+            color: var(--blue);
+            opacity: 0.3;
+            transition: transform 0.15s, opacity 0.15s;
+            flex-shrink: 0;
+        }
+
+        /* ── CASE STUDY DETAIL ────────────────────────────────────────────────────── */
+        .cs-detail-header {
+            padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 2rem;
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .back-btn:hover {
+            color: var(--white);
+        }
+
+        .cs-detail-sector {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            margin-bottom: 1rem;
+        }
+
+        .cs-detail-header h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            color: var(--white);
+            line-height: 1.15;
+            max-width: 20ch;
+            margin-bottom: 1.25rem;
+        }
+
+        .cs-detail-header .lead {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 54ch;
+            line-height: 1.65;
+        }
+
+        .cs-body {
+            padding-block: clamp(3rem, 6vw, 5rem);
+        }
+
+        .cs-sections {
+            max-width: 680px;
+        }
+
+        .cs-section {
+            margin-bottom: 3.5rem;
+        }
+
+        .cs-section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .cs-section-label::before {
+            content: '';
+            width: 1.5rem;
+            height: 2px;
+            background: var(--blue);
+        }
+
+        .cs-section h2 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .cs-section p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .cs-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cs-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        .cs-nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: 1.5px solid var(--border);
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--navy);
+            cursor: pointer;
+            transition: border-color 0.15s, background 0.15s;
+        }
+
+        .cs-nav-btn:hover {
+            border-color: var(--blue);
+            background: var(--bg-light);
+        }
+
+        /* ── SERVICES PAGE ────────────────────────────────────────────────────────── */
+        .services-intro {
+            font-size: 1.0625rem;
+            color: var(--muted);
+            max-width: 60ch;
+            line-height: 1.7;
+            margin-bottom: 4rem;
+        }
+
+        .service-block {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+        }
+
+        .service-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-block h2 {
+            font-size: 1.375rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.3;
+        }
+
+        .service-block>div:last-child p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-includes {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 0.875rem;
+        }
+
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .service-tag {
+            display: inline-block;
+            padding: 0.375rem 0.875rem;
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            color: var(--muted);
+        }
+
+        /* ── ABOUT PAGE ───────────────────────────────────────────────────────────── */
+        .about-intro {
+            font-size: clamp(1.05rem, 2vw, 1.2rem);
+            color: var(--muted);
+            line-height: 1.75;
+            max-width: 66ch;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-intro strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .bio-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .bio-role {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .bio h2 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.25rem;
+        }
+
+        .bio p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 0.875rem;
+        }
+
+        .bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-note {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            border-left: 3px solid var(--blue);
+        }
+
+        .about-note p {
+            font-size: 1rem;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .about-note p+p {
+            margin-top: 0.875rem;
+        }
+
+        .about-note strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* ── CONTACT PAGE ─────────────────────────────────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 5rem;
+            padding-block: var(--section-py);
+        }
+
+        .contact-info h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+        }
+
+        .contact-info p {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-email {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--blue);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-who h3 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .contact-who li {
+            font-size: 0.9375rem;
+            color: var(--muted);
+            line-height: 1.6;
+            padding: 0.625rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .contact-who li::before {
+            content: '—';
+            color: var(--blue);
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        /* Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .form-input,
+        .form-textarea {
+            padding: 0.875rem 1rem;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9375rem;
+            color: var(--text);
+            background: var(--white);
+            transition: border-color 0.15s, box-shadow 0.15s;
+            outline: none;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 3px rgba(30, 95, 173, 0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #b0bec8;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 140px;
+        }
+
+        .form-note {
+            font-size: 0.8125rem;
+            color: var(--muted);
+            font-style: italic;
+            margin-top: -0.25rem;
+        }
+
+        .form-submit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9375rem 2.25rem;
+            align-self: flex-start;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 7px;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.15s, transform 0.1s;
+        }
+
+        .form-submit:hover {
+            background: var(--navy-light);
+            transform: translateY(-1px);
+        }
+
+        .form-success {
+            padding: 1.25rem 1.5rem;
+            background: #ecfdf5;
+            border: 1px solid #6ee7b7;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            color: #065f46;
+            font-weight: 500;
+            display: none;
+        }
+
+        /* ── FOOTER ───────────────────────────────────────────────────────────────── */
+        .site-footer {
+            background: var(--bg-dark);
+            color: rgba(255, 255, 255, 0.35);
+            padding: 3.5rem 0;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-logo {
+            font-size: 0.9375rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            font-size: 0.8125rem;
+            color: rgba(255, 255, 255, 0.35);
+            cursor: pointer;
+            transition: color 0.15s;
+        }
+
+        .footer-links a:hover {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .footer-tagline {
+            font-size: 0.8125rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.25);
+            width: 100%;
+        }
+
+        /* ── RESPONSIVE ───────────────────────────────────────────────────────────── */
+        @media (max-width: 900px) {
+            .how-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .how-step {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            }
+
+            .how-step:last-child {
+                border-bottom: none;
+            }
+
+            .service-block {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .cs-list-item {
+                grid-template-columns: 1fr;
+            }
+
+            .cs-list-arrow {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .diff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── NAV ────────────────────────────────────────────────────────────────── -->
+    <header>
+        <nav class="site-nav" id="siteNav">
+            <div class="nav-inner">
+                <div class="nav-logo" onclick="navigate('home')"><img src="510-logo.png" alt="510 Interactive LLC Logo"/><span>510interactive LLC</span></div>
+                <div class="nav-links" id="navLinks">
+                    <a onclick="navigate('work')" id="nav-work">Work</a>
+                    <a onclick="navigate('services')" id="nav-services">Services</a>
+                    <a onclick="navigate('about')" id="nav-about">About</a>
+                    <a onclick="navigate('contact')" class="nav-contact" id="nav-contact">Contact</a>
+                </div>
+                <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+        <div class="mobile-menu" id="mobileMenu">
+            <a onclick="navigate('home'); toggleMenu()">Home</a>
+            <a onclick="navigate('work'); toggleMenu()">Work</a>
+            <a onclick="navigate('services'); toggleMenu()">Services</a>
+            <a onclick="navigate('about'); toggleMenu()">About</a>
+            <a onclick="navigate('contact'); toggleMenu()">Contact</a>
+        </div>
+    </header>
+
+    <!-- ── MAIN APP ────────────────────────────────────────────────────────────── -->
+    <main id="app"></main>
+
+    <!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+    <footer class="site-footer">
         <div class="container">
-    
-            <div class="bar"></div>
-
-            <div>
-
-
-                <div class="deck">
-                    <div class="copy">
-                        <h2>
-                            510 transforms creative ideas into tailored desktop and mobile experiences.
-                        </h2>
-                    </div>
+            <div class="footer-inner">
+                <div class="footer-logo">510 Interactive</div>
+                <div class="footer-links">
+                    <a onclick="navigate('work')">Work</a>
+                    <a onclick="navigate('services')">Services</a>
+                    <a onclick="navigate('about')">About</a>
+                    <a onclick="navigate('contact')">Contact</a>
                 </div>
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1531433321/510/ss.jpg">
-                        <div class="branding icon-ss">
-                        </div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>      
-                
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1531433190/510/jurassic.jpg">
-                        <div class="branding icon-jw">
-                        </div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1531433191/510/gotts.jpg">
-                        <div class="branding icon-gotts">
-                        </div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>
-
-
-          
-
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1453218260/510/thomaskeller.jpg">
-                        <div class="branding icon-tk">
-                        </div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1453219318/510/ecoliteracy.jpg)">
-                        <div class="branding icon-cel"></div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1453184042/510/thepurebar.jpg)">
-                        <div class="branding icon-purebar">
-                        </div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>
-                
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1453219151/510/yosemite.jpg)">
-                        <div class="branding icon-yc"></div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1453356543/510/idwt.jpg)">
-                        <div class="branding icon-idwt"></div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>              
-
-                <div class="deck">
-                    <div class="background" style="background-image:url(//res.cloudinary.com/fiveten/image/upload/v1453219659/510/futo.jpg)">
-                        <div class="branding icon-futo"></div>
-                    </div>
-                    <div class="copy">
-                        <h2>&nbsp;</h2>
-                    </div>
-                </div>                          
-            
-            </div>
-
-
-        </div><!-- END CONTAINER -->
-
-
-        <!-- END BARS  -->
-
-        <div class="arrows">
-            <a href="#" class="arrow up"></a>
-            <a href="#anchor02" class="arrow down"></a>
-        </div>            
-
-        <!-- END ARROWS  -->
-
-        <div id="contactModal" class="contact-modal">
-            <div class="contact-form">
-                <a class="close-contact-form icon-cross" id="closeForm"></a>
-                <h2 class="form-copy">
-                    Hello. 
-                </h2>
-                <form id="contact-form" action="//formspree.io/xoqpkdlg"
-                      method="POST">
-
-                <input type="text" name="Name" placeholder="Name" required>
-                <input type="email" name="Email" placeholder="Email" required>
-                <textarea name="Message" cols="30" rows="6" placeholder="Message" required></textarea>
-                <!-- CONFIG -->
-                <input class="is-hidden" type="text" name="_gotcha">
-                <input type="hidden" name="_subject" value="website contact!!">
-                <input type="hidden" name="_cc" value="peter@goodforks.com">
-                <!-- /CONFIG -->
-                <input class="submit" type="submit" value="Send">
-
-                </form>
+                <div class="footer-tagline">Small studio. Senior team. Straightforward work.</div>
             </div>
         </div>
+    </footer>
 
-        <!-- END CONTACT  -->
+    <script>
+        'use strict';
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="scripts/main.js"></script>
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-1444337-30');ga('send','pageview');
-        </script>
-    </body>
+        // ── DATA ─────────────────────────────────────────────────────────────────────
+        const CASE_STUDIES = [
+            {
+                id: 'university',
+                sector: 'Higher Education',
+                title: 'Harvard School of Public Health ',
+                summary: 'Center for Climate, Health, and the Global Environment — Website Redesign and Custom Resource Library',
+                problem: [
+                    "A large resource library had grown without direction for nearly fifteen years. What started as a manageable site had expanded to more than 400 pages — with overlapping navigation systems, and duplicate content.",
+                    "The internal team was overwhelmed. They had no way to keep the site organized, no clear ownership of content, and no confidence that the site was actually serving its mission."
+                ],
+                approach: [
+                    "We began with a content audit and stakeholder interviews — not wireframes. Understanding who came to the site and why was more important than deciding what it should look like.",
+                    "We identified five primary user journeys: prospective students, current students, faculty, staff, and community members. Everything else was secondary. We mapped what those users actually came for, cut the site from 400 to under 200 pages, and rebuilt the navigation around user intent rather than internal org structure.",
+                    "We also established a content governance model — a lightweight system for keeping the site maintained after launch, with clear ownership at the department level."
+                ],
+                result: [
+                    "The new website launched successfully, and the internal team finally had a site they could manage without calling a developer.",
+                    "The communications director later said the most valuable thing we delivered wasn't the redesign — it was the structure behind it. We'd agree."
+                ]
+            },
+            {
+                id: 'nonprofit-donation',
+                sector: 'Nonprofit',
+                title: 'Yosemite Conservancy — Donation & Engagement Overhaul',
+                summary: 'Strong traffic, poor conversion. We fixed the path between the two.',
+                problem: [
+                    "A national advocacy nonprofit had a strong mission, a recognizable name, and solid web traffic. The problem was what happened after visitors arrived. Donation completion rates were low. Volunteer signups were almost nonexistent online. Partners were reaching out by phone because they couldn't figure out how to connect through the site.",
+                    "The site had been built for the organization, not for the people it was trying to reach. Every page led somewhere — but rarely somewhere useful."
+                ],
+                approach: [
+                    "We mapped the user journey for three core audiences: donors, volunteers, and organizational partners. Each had different entry points, different needs, and different reasons to leave. Once we understood where things were breaking down, the fixes became clearer.",
+                    "We simplified the donation flow from seven steps to three, removing account creation requirements that were causing abandonment before the first dollar was given."
+                ],
+                result: [
+                    "Donation completion improved. Staff stopped fielding weekly calls from donors who couldn't figure out how to give online. Volunteer signups increased from almost zero to a steady stream within six months.",
+                    "The executive director noted that the biggest change was invisible: the site now worked for people who didn't already know the organization. That was the point."
+                ]
+            },
+            {
+                id: 'community-service',
+                sector: 'Community Service',
+                title: 'Interactive map for a state-wide behavioral health organization',
+                summary: 'Crestwood needed a way to visualize their locations across the state. We gave them a solution.',
+                problem: [
+                    "A state-wide behavioral health organization needed a way to visualize their locations across the state. The existing website didn't provide an intuitive way for users to find and interact with this information."
+                ],
+                approach: [
+                    "We rebuilt the site with a focus on location visualization. Every page was evaluated by asking: does this help users find and understand the organization's mission? If not, it was rewritten, simplified, or removed.",
+                    "We wrote new headline copy and narrative for each program level — language that described the actual experience of being a student there, not the institutional language the school used internally. We worked directly with department heads and current families to get the voice right.",
+                     "We built a custom interactive map that allowed users to easily find and explore the organization's locations across the state, with clear information about the services offered at each location."],
+                result: [
+                    "The new site launched to positive feedback from both internal stakeholders and external users. The interactive map became a key feature, helping users easily find and understand the organization's locations and services."
+                ]
+            }
+        ];
+
+        // ── ROUTER ────────────────────────────────────────────────────────────────────
+        let currentPage = 'home';
+
+        function navigate(page, data) {
+            currentPage = page;
+            const app = document.getElementById('app');
+            window.scrollTo({ top: 0, behavior: 'instant' });
+
+            // Update nav active state
+            ['work', 'services', 'about', 'contact'].forEach(p => {
+                const el = document.getElementById('nav-' + p);
+                if (el) el.classList.toggle('active', p === page);
+            });
+
+            // Render page
+            let html = '';
+            switch (page) {
+                case 'home': html = renderHome(); break;
+                case 'work': html = renderWork(); break;
+                case 'services': html = renderServices(); break;
+                case 'about': html = renderAbout(); break;
+                case 'contact': html = renderContact(); break;
+                case 'case-study':
+                    const cs = CASE_STUDIES.find(c => c.id === data);
+                    html = cs ? renderCaseStudy(cs) : renderWork();
+                    break;
+                default: html = renderHome();
+            }
+
+            app.innerHTML = '<div class="page">' + html + '</div>';
+        }
+
+        // Scroll listener for nav shadow
+        window.addEventListener('scroll', () => {
+            document.getElementById('siteNav').classList.toggle('scrolled', window.scrollY > 20);
+        });
+
+        // ── TOGGLE MOBILE MENU ────────────────────────────────────────────────────────
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
+        // ── FORM SUBMIT ───────────────────────────────────────────────────────────────
+        function handleSubmit(e) {
+            e.preventDefault();
+            document.getElementById('formSuccess').style.display = 'block';
+            e.target.style.display = 'none';
+        }
+
+        // ── PAGE: HOME ────────────────────────────────────────────────────────────────
+        function renderHome() {
+            const previewIds = ['university', 'nonprofit-donation', 'community-service'];
+            const previews = previewIds.map(id => CASE_STUDIES.find(c => c.id === id));
+
+            return `
+    <!-- HERO -->
+    <section class="hero section-pad">
+      <div class="container">
+        <div class="hero-eyebrow">Senior digital studio</div>
+        <h1>Built by people who've<br><em>done this before.</em></h1>
+        <p class="hero-sub">510 Interactive is a small studio with deep experience — brought in when complexity calls for clarity, and when things actually need to work.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="navigate('work')">See our work <span class="arrow">→</span></button>
+          <button class="btn-secondary" onclick="navigate('contact')">Get in touch <span class="arrow">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- POSITIONING -->
+    <section class="positioning">
+      <div class="container">
+        <p>We've been at this a long time. Long enough to know what works, what doesn't, and how to tell the difference quickly. Our clients are <strong>mid-sized organizations</strong> — universities, health systems, nonprofits, and established companies — that need <strong>structured thinking and clean execution</strong>, not another agency selling excitement.</p>
+        <p>If your website isn't doing its job, we know how to fix it. If you're not sure what the problem is, we can figure that out too.</p>
+      </div>
+    </section>
+
+    <!-- DIFFERENTIATORS -->
+    <section class="section-pad" style="border-bottom: 1px solid var(--border)">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Why 510</div>
+          <h2 class="section-title">Experience you can tell from<br>the first conversation.</h2>
+        </div>
+        <div class="diff-grid">
+          ${[
+                    ['Senior experience from day one.', 'No account managers, no handoffs, no juniors learning on your project. You talk to the people doing the work.'],
+                    ['We lead with clarity, not concepts.', 'We help you define the problem before we start solving it. That step alone often changes everything.'],
+                    ["We've seen this before.", "Chances are your situation isn't new to us. That shortens the runway significantly."],
+                    ['Small team, real accountability.', "We're not managing layers of subcontractors. When we say we'll do something, we do it."],
+                    ["We don't disappear after launch.", 'We stay involved as long as you need us. Many of our client relationships have lasted years.'],
+                ].map(([title, desc], i) => `
+            <div class="diff-item">
+              <span class="diff-number">0${i + 1}</span>
+              <h3>${title}</h3>
+              <p>${desc}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK PREVIEW -->
+    <section class="section-pad" style="border-bottom: 1px solid var(--border)">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Selected Work</div>
+          <h2 class="section-title">A few examples of what we've done<br>and how we've done it.</h2>
+        </div>
+        <div class="cs-grid">
+          ${previews.map(cs => `
+            <div class="cs-card" onclick="navigate('case-study','${cs.id}')">
+              <div class="cs-sector">${cs.sector}</div>
+              <h3>${cs.title}</h3>
+              <p>${cs.summary}</p>
+              <span class="cs-link">Read the case study →</span>
+            </div>
+          `).join('')}
+        </div>
+        <div style="margin-top:2rem">
+          <button class="btn-secondary" onclick="navigate('work')">View all work <span class="arrow">→</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE WORK -->
+    <section class="how-bg section-pad">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">How We Work</div>
+          <h2 class="section-title">Three steps. No surprises.</h2>
+        </div>
+        <div class="how-grid">
+          ${[
+                    ['01', 'Understand the problem', "We start by asking the right questions. Who uses this? What isn't working? What's already been tried? This phase is shorter than clients expect — and more valuable."],
+                    ['02', 'Bring structure', "Before anything is designed or built, we map the right approach: content hierarchy, user flows, navigation, technical requirements. This is where complexity gets organized."],
+                    ['03', 'Execute cleanly', "We build, test, and deliver. We stay in close contact throughout and involve you at decision points, not just at milestones. Nothing arrives as a surprise."],
+                ].map(([num, title, desc]) => `
+            <div class="how-step">
+              <div class="how-num">${num}</div>
+              <h3>${title}</h3>
+              <p>${desc}</p>
+            </div>
+          `).join('')}
+        </div>
+        <p class="how-note">Most of our projects come in under deadline and over expectation. <strong>That's not a promise — it's just been our experience.</strong></p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="home-cta">
+      <div class="container">
+        <h2>Let's figure out what you're dealing with.</h2>
+        <p>If your website isn't doing its job — or you're not sure what's wrong — reach out. We're direct, we're experienced, and we don't waste your time.</p>
+        <button class="btn-primary" onclick="navigate('contact')">Get in touch <span class="arrow">→</span></button>
+      </div>
+    </section>
+  `;
+        }
+
+        // ── PAGE: WORK ────────────────────────────────────────────────────────────────
+        function renderWork() {
+            return `
+    <div class="page-header">
+      <div class="container">
+        <div class="eyebrow">Our Work</div>
+        <h1>Selected Projects</h1>
+        <p>We've worked across higher education, healthcare, nonprofit, financial services, and government. A few examples of what we've done and how we've done it.</p>
+      </div>
+    </div>
+    <div class="container section-pad">
+      <div class="cs-list">
+        ${CASE_STUDIES.map((cs, i) => `
+          <div class="cs-list-item" onclick="navigate('case-study','${cs.id}')">
+            <div class="cs-list-info">
+              <div class="cs-list-sector">${cs.sector}</div>
+              <div class="cs-list-title">${cs.title}</div>
+              <div class="cs-list-summary">${cs.summary}</div>
+            </div>
+            <div class="cs-list-arrow">→</div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+    <section class="home-cta" style="margin-top:0">
+      <div class="container">
+        <h2>Ready to talk about your project?</h2>
+        <p>We're direct about whether we're the right fit. If we're not, we'll tell you.</p>
+        <button class="btn-primary" onclick="navigate('contact')">Get in touch <span class="arrow">→</span></button>
+      </div>
+    </section>
+  `;
+        }
+
+        // ── PAGE: CASE STUDY DETAIL ───────────────────────────────────────────────────
+        function renderCaseStudy(cs) {
+            const idx = CASE_STUDIES.findIndex(c => c.id === cs.id);
+            const prev = CASE_STUDIES[idx - 1];
+            const next = CASE_STUDIES[idx + 1];
+
+            return `
+    <div class="cs-detail-header">
+      <div class="container">
+        <button class="back-btn" onclick="navigate('work')">← Back to Work</button>
+        <div class="cs-detail-sector">${cs.sector}</div>
+        <h1>${cs.title}</h1>
+        <p class="lead">${cs.summary}</p>
+      </div>
+    </div>
+    <div class="cs-body">
+      <div class="container">
+        <div class="cs-sections">
+          <div class="cs-section">
+            <div class="cs-section-label">The Problem</div>
+            ${cs.problem.map(p => `<p>${p}</p>`).join('')}
+          </div>
+          <div class="cs-section">
+            <div class="cs-section-label">Our Approach</div>
+            ${cs.approach.map(p => `<p>${p}</p>`).join('')}
+          </div>
+          <div class="cs-section">
+            <div class="cs-section-label">The Result</div>
+            ${cs.result.map(p => `<p>${p}</p>`).join('')}
+          </div>
+          <div class="cs-nav">
+            ${prev ? `<button class="cs-nav-btn" onclick="navigate('case-study','${prev.id}')">← ${prev.title}</button>` : ''}
+            ${next ? `<button class="cs-nav-btn" onclick="navigate('case-study','${next.id}')">${next.title} →</button>` : ''}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+        }
+
+        // ── PAGE: SERVICES ────────────────────────────────────────────────────────────
+        function renderServices() {
+            const services = [
+                {
+                    label: 'Digital Strategy & UX',
+                    title: 'Digital Strategy & UX',
+                    desc: "We help organizations understand what their digital presence should actually do — and who it should serve. Before anything is designed or built, we make sure the right questions have been asked and answered.",
+                    tags: ['Content audits', 'User research', 'Information architecture', 'Site mapping', 'User journey mapping', 'Stakeholder workshops', 'Digital communications planning']
+                },
+                {
+                    label: 'Website Design & Development',
+                    title: 'Website Design & Development',
+                    desc: "We design and build websites that are clear, usable, and maintainable. We work in standard platforms — Webflow, WordPress, and custom builds — and prioritize long-term sustainability over launch-day novelty. Accessibility and performance are standard, not add-ons.",
+                    tags: ['Full site design & build', 'CMS setup & training', 'Accessibility review (WCAG 2.1 AA)', 'Performance optimization', 'Platform migration', 'Staff training & documentation']
+                },
+                {
+                    label: 'Content & Structure',
+                    title: 'Content & Structure',
+                    desc: "Many website problems are content problems. We write, edit, and organize digital content — particularly for organizations with complex information, multiple audiences, or years of accumulated material that hasn't been reviewed.",
+                    tags: ['Copywriting & editing', 'Plain-language rewriting', 'Content strategy', 'Taxonomy & labeling', 'Content governance planning', 'Style guides']
+                },
+                {
+                    label: 'Ongoing Support',
+                    title: 'Ongoing Support',
+                    desc: "We stay involved with clients whose digital needs evolve over time. This might mean quarterly strategic reviews, on-call support for updates, or a retainer arrangement for ongoing work. We don't disappear after launch.",
+                    tags: ['Maintenance & updates', 'Periodic UX reviews', 'Staff training', 'Strategic check-ins', 'Technical support']
+                }
+            ];
+
+            return `
+    <div class="page-header">
+      <div class="container">
+        <div class="eyebrow">What We Do</div>
+        <h1>Services</h1>
+      </div>
+    </div>
+    <div class="container section-pad">
+      <p class="services-intro">We don't offer everything. We focus on a specific set of capabilities where we do our best work, for organizations where quality and clarity matter more than volume.</p>
+      ${services.map(s => `
+        <div class="service-block">
+          <div>
+            <div class="service-label">${s.label}</div>
+            <h2>${s.title}</h2>
+          </div>
+          <div>
+            <p>${s.desc}</p>
+            <div class="service-includes">Includes</div>
+            <div class="service-tags">
+              ${s.tags.map(t => `<span class="service-tag">${t}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      `).join('')}
+      <div style="padding-top: 3rem; border-top: 1px solid var(--border); margin-top: 1rem">
+        <p style="font-size:1rem; color: var(--muted); font-style: italic; margin-bottom: 1.5rem">Not sure whether your situation fits? Reach out. We'll be direct with you about whether we're the right fit.</p>
+        <button class="btn-primary" onclick="navigate('contact')">Get in touch <span class="arrow">→</span></button>
+      </div>
+    </div>
+  `;
+        }
+
+        // ── PAGE: ABOUT ───────────────────────────────────────────────────────────────
+        function renderAbout() {
+            return `
+    <div class="page-header">
+      <div class="container">
+        <div class="eyebrow">About 510</div>
+        <h1>The Studio</h1>
+      </div>
+    </div>
+    <div class="container section-pad">
+      <p class="about-intro">510 Interactive is Peter and Dom. Two people who have spent most of their careers figuring out how digital things should work — and how to make them work better. <strong>We've been doing this, in various combinations, for over twenty years.</strong> We're not building an agency. We're building good work for clients who deserve it.</p>
+      <p class="about-intro">Most of our projects involve both of us at different stages. Peter leads technical architecture and build. Dom leads strategy and content direction. We've worked together long enough that handoffs are smooth and the left hand always knows what the right hand is doing. When you work with 510, <strong>you deal directly with the people doing the work</strong> — not an account manager.</p>
+
+      <div class="bio-grid">
+        <div class="bio">
+          <div class="bio-label">Peter</div>
+          <h2>Peter</h2>
+          <div class="bio-role">Technical Lead</div>
+          <p>Peter has spent two decades building digital systems for organizations that can't afford to get it wrong. His background covers web development, content management platforms, and systems architecture — with deep experience across higher education, healthcare, and government.</p>
+          <p>He doesn't over-engineer. He doesn't cut corners. He builds things that work, and that can be managed without him once they're live. Clients who've worked with Peter tend to come back — not because they have problems, but because they trust him to solve the next thing efficiently.</p>
+        </div>
+        <div class="bio">
+          <div class="bio-label">Dom</div>
+          <h2>Dom</h2>
+          <div class="bio-role">Creative Direction & Strategy</div>
+          <p>Dom's background is in strategy, content, and creative direction. He's helped organizations of all sizes figure out what they're saying, who they're saying it to, and how to structure information so that people can actually find and use it.</p>
+          <p>He's spent significant time inside organizations going through digital transitions — which means he understands how to work with internal teams, stakeholders, and leadership, not just design clients. He knows how decisions get made inside institutions, and how to navigate that without slowing the project down.</p>
+        </div>
+      </div>
+
+      <div class="about-note">
+        <p>We take on a limited number of projects so that every client gets real attention. <strong>We're direct about what we can and can't do,</strong> and we'll tell you honestly if your project needs something outside our wheelhouse.</p>
+        <p>Many of our client relationships extend well beyond a single project. That's not a pitch — it's just what tends to happen when things go well and people trust each other.</p>
+      </div>
+
+      <div style="margin-top: 3rem">
+        <button class="btn-primary" onclick="navigate('contact')">Work with us <span class="arrow">→</span></button>
+      </div>
+    </div>
+  `;
+        }
+
+        // ── PAGE: CONTACT ─────────────────────────────────────────────────────────────
+        function renderContact() {
+            return `
+    <div class="page-header">
+      <div class="container">
+        <div class="eyebrow">Contact</div>
+        <h1>Let's talk.</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>If you're dealing with a website that isn't working, a digital project that's stalled, or a situation where you need someone senior to come in and make sense of it — reach out.</p>
+          <div class="contact-email">
+            <span>✉</span>
+            <a href="mailto:hello@510interactive.com">hello@510interactive.com</a>
+          </div>
+          <p style="font-size:0.85rem; color: var(--muted); margin-bottom: 2.5rem">We typically respond within one business day.</p>
+          <div class="contact-who">
+            <h3>Who should reach out</h3>
+            <ul>
+              ${[
+                    "You have a website that's not performing and you're not sure why.",
+                    "You're planning a redesign or migration and want senior oversight from the start.",
+                    "You've had a bad agency experience and need someone to assess the situation honestly.",
+                    "You're not sure what you need — but you know something isn't working.",
+                ].map(item => `<li>${item}</li>`).join('')}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <div id="formSuccess" class="form-success">
+            We got it. Someone will be in touch within one business day.
+          </div>
+          <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="org">Organization</label>
+              <input class="form-input" type="text" id="org" name="org" placeholder="Where you work" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">What are you working on? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Tell us a little about your situation — as much or as little as you'd like."></textarea>
+            </div>
+            <p class="form-note">If you're not certain we're a fit, reach out anyway. We'll be honest about it.</p>
+            <button type="submit" class="form-submit">Send it our way →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  `;
+        }
+
+        // ── INIT ──────────────────────────────────────────────────────────────────────
+        navigate('home');
+    </script>
+</body>
+
 </html>
