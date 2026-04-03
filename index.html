@@ -7,9 +7,10 @@
     <title>510 Interactive — Senior Digital Problem-Solvers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
+    <!-- <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
+    <script src="//use.typekit.net/sda2jfw.js"></script>
     <style>
         /* ── RESET & BASE ─────────────────────────────────────────────────────────── */
         *,
@@ -26,7 +27,7 @@
         }
 
         body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'proxima-nova', system-ui, -apple-system, sans-serif;
             background: #ffffff;
             color: #1a2332;
             line-height: 1.6;
@@ -1140,6 +1141,15 @@
             font-weight: 700;
             color: rgba(255, 255, 255, 0.7);
         }
+        
+        .footer-logo img {
+            height: 2rem;
+            width: auto;
+        }
+        .footer-logo span {
+            display: none;
+        }
+
 
         .footer-links {
             display: flex;
@@ -1263,7 +1273,7 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-inner">
-                <div class="footer-logo">510 Interactive</div>
+                <div class="footer-logo"><img src="510-logo-dark.png" alt="510 Interactive LLC Logo" /><span>510interactive LLC</span></div>
                 <div class="footer-links">
                     <a onclick="navigate('work')">Work</a>
                     <a onclick="navigate('services')">Services</a>
