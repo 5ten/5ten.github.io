@@ -1300,15 +1300,15 @@
             const caseStudyIds = ['university', 'nonprofit-donation', 'community-service'];
             const [caseStudies, services, studio, peter, dom, hero, positioning, howWeWork] = await Promise.all([
                 Promise.all(caseStudyIds.map(id =>
-                    fetch('/_data/case-studies/' + id + '.json').then(r => r.json())
+                    fetch('/data/case-studies/' + id + '.json').then(r => r.json())
                 )),
-                fetch('/_data/services/services.json').then(r => r.json()),
-                fetch('/_data/about/studio.json').then(r => r.json()),
-                fetch('/_data/about/peter.json').then(r => r.json()),
-                fetch('/_data/about/dom.json').then(r => r.json()),
-                fetch('/_data/home/hero.json').then(r => r.json()),
-                fetch('/_data/home/positioning.json').then(r => r.json()),
-                fetch('/_data/home/how-we-work.json').then(r => r.json()),
+                fetch('/data/services/services.json').then(r => r.json()),
+                fetch('/data/about/studio.json').then(r => r.json()),
+                fetch('/data/about/peter.json').then(r => r.json()),
+                fetch('/data/about/dom.json').then(r => r.json()),
+                fetch('/data/home/hero.json').then(r => r.json()),
+                fetch('/data/home/positioning.json').then(r => r.json()),
+                fetch('/data/home/how-we-work.json').then(r => r.json()),
             ]);
             CASE_STUDIES = caseStudies;
             SERVICES = services;
