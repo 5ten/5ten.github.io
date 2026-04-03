@@ -11,7 +11,7 @@ collections:
   # ── CASE STUDIES ──────────────────────────────────────────────────────────────
   - name: "case_studies"
     label: "Case Studies"
-    folder: "_data/case-studies"
+    folder: "data/case-studies"
     create: true
     slug: "{{id}}"
     extension: "json"
@@ -37,7 +37,7 @@ collections:
   # ── SERVICES ──────────────────────────────────────────────────────────────────
   - name: "services"
     label: "Services"
-    folder: "_data/services"
+    folder: "data/services"
     create: true
     slug: "{{label}}"
     extension: "json"
@@ -57,7 +57,7 @@ collections:
 
       - label: "Studio Introduction"
         name: "studio"
-        file: "_data/about/studio.json"
+        file: "data/about/studio.json"
         format: "json"
         fields:
           - label: "Intro paragraphs"
@@ -71,7 +71,7 @@ collections:
 
       - label: "Peter — Bio"
         name: "peter"
-        file: "_data/about/peter.json"
+        file: "data/about/peter.json"
         format: "json"
         fields:
           - { label: "Name", name: "name", widget: "string", default: "Peter" }
@@ -83,7 +83,7 @@ collections:
 
       - label: "Dom — Bio"
         name: "dom"
-        file: "_data/about/dom.json"
+        file: "data/about/dom.json"
         format: "json"
         fields:
           - { label: "Name", name: "name", widget: "string", default: "Dom" }
@@ -100,7 +100,7 @@ collections:
 
       - label: "Hero"
         name: "hero"
-        file: "_data/home/hero.json"
+        file: "data/home/hero.json"
         format: "json"
         fields:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
@@ -109,7 +109,7 @@ collections:
 
       - label: "Positioning Strip"
         name: "positioning"
-        file: "_data/home/positioning.json"
+        file: "data/home/positioning.json"
         format: "json"
         fields:
           - label: "Paragraphs"
@@ -119,7 +119,7 @@ collections:
 
       - label: "How We Work Steps"
         name: "how_we_work"
-        file: "_data/home/how-we-work.json"
+        file: "data/home/how-we-work.json"
         format: "json"
         fields:
           - label: "Steps"
