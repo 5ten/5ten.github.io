@@ -136,7 +136,7 @@
             cursor: pointer;
         }
 
-        .nav-logo img { 
+        .nav-logo img {
             height: 2rem;
             width: auto;
         }
@@ -1233,7 +1233,8 @@
     <header>
         <nav class="site-nav" id="siteNav">
             <div class="nav-inner">
-                <div class="nav-logo" onclick="navigate('home')"><img src="510-logo.png" alt="510 Interactive LLC Logo"/><span>510interactive LLC</span></div>
+                <div class="nav-logo" onclick="navigate('home')"><img src="510-logo.png"
+                        alt="510 Interactive LLC Logo" /><span>510interactive LLC</span></div>
                 <div class="nav-links" id="navLinks">
                     <a onclick="navigate('work')" id="nav-work">Work</a>
                     <a onclick="navigate('services')" id="nav-services">Services</a>
@@ -1326,7 +1327,7 @@
                 approach: [
                     "We rebuilt the site with a focus on location visualization. Every page was evaluated by asking: does this help users find and understand the organization's mission? If not, it was rewritten, simplified, or removed.",
                     "We wrote new headline copy and narrative for each program level — language that described the actual experience of being a student there, not the institutional language the school used internally. We worked directly with department heads and current families to get the voice right.",
-                     "We built a custom interactive map that allowed users to easily find and explore the organization's locations across the state, with clear information about the services offered at each location."],
+                    "We built a custom interactive map that allowed users to easily find and explore the organization's locations across the state, with clear information about the services offered at each location."],
                 result: [
                     "The new site launched to positive feedback from both internal stakeholders and external users. The interactive map became a key feature, helping users easily find and understand the organization's locations and services."
                 ]
@@ -1378,7 +1379,25 @@
         // ── FORM SUBMIT ───────────────────────────────────────────────────────────────
         function handleSubmit(e) {
             e.preventDefault();
-            document.getElementById('formSuccess').style.display = 'block';
+
+            const formData = new FormData(this);
+
+            fetch('https://formspree.io/f/xoqpkdlg', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('formSuccess').style.display = 'block';
+                    document.getElementById('contactForm').reset();
+                })
+                .catch(error => {
+                    document.getElementById('formSuccess').textContent = 'Error sending message.';
+                    document.getElementById('formSuccess').style.color = 'red';
+                });
             e.target.style.display = 'none';
         }
 
