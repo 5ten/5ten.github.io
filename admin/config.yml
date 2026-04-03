@@ -2,8 +2,6 @@ backend:
   name: github
   repo: 5ten/5ten.github.io
   branch: master
-  base_url: https://5ten.netlify.app  # OAuth proxy — see setup instructions
-  auth_endpoint: auth
 
 media_folder: "uploads"
 public_folder: "/uploads"
