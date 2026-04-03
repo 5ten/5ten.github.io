@@ -1,0 +1,19 @@
+{
+  "id": "university",
+  "sector": "Higher Education",
+  "title": "Harvard School of Public Health",
+  "summary": "Center for Climate, Health, and the Global Environment — Website Redesign and Custom Resource Library",
+  "problem": [
+    "A large resource library had grown without direction for nearly fifteen years. What started as a manageable site had expanded to more than 400 pages — with overlapping navigation systems, and duplicate content.",
+    "The internal team was overwhelmed. They had no way to keep the site organized, no clear ownership of content, and no confidence that the site was actually serving its mission."
+  ],
+  "approach": [
+    "We began with a content audit and stakeholder interviews — not wireframes. Understanding who came to the site and why was more important than deciding what it should look like.",
+    "We identified five primary user journeys: prospective students, current students, faculty, staff, and community members. Everything else was secondary. We mapped what those users actually came for, cut the site from 400 to under 200 pages, and rebuilt the navigation around user intent rather than internal org structure.",
+    "We also established a content governance model — a lightweight system for keeping the site maintained after launch, with clear ownership at the department level."
+  ],
+  "result": [
+    "The new website launched successfully, and the internal team finally had a site they could manage without calling a developer.",
+    "The communications director later said the most valuable thing we delivered wasn't the redesign — it was the structure behind it. We'd agree."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "nonprofit-donation",
+  "sector": "Nonprofit",
+  "title": "Yosemite Conservancy — Donation & Engagement Overhaul",
+  "summary": "Strong traffic, poor conversion. We fixed the path between the two.",
+  "problem": [
+    "A national advocacy nonprofit had a strong mission, a recognizable name, and solid web traffic. The problem was what happened after visitors arrived. Donation completion rates were low. Volunteer signups were almost nonexistent online. Partners were reaching out by phone because they couldn't figure out how to connect through the site.",
+    "The site had been built for the organization, not for the people it was trying to reach. Every page led somewhere — but rarely somewhere useful."
+  ],
+  "approach": [
+    "We mapped the user journey for three core audiences: donors, volunteers, and organizational partners. Each had different entry points, different needs, and different reasons to leave. Once we understood where things were breaking down, the fixes became clearer.",
+    "We simplified the donation flow from seven steps to three, removing account creation requirements that were causing abandonment before the first dollar was given."
+  ],
+  "result": [
+    "Donation completion improved. Staff stopped fielding weekly calls from donors who couldn't figure out how to give online. Volunteer signups increased from almost zero to a steady stream within six months.",
+    "The executive director noted that the biggest change was invisible: the site now worked for people who didn't already know the organization. That was the point."
+  ]
+}

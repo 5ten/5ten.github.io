@@ -1,0 +1,17 @@
+{
+  "id": "community-service",
+  "sector": "Community Service",
+  "title": "Interactive map for a state-wide behavioral health organization",
+  "summary": "Crestwood needed a way to visualize their locations across the state. We gave them a solution.",
+  "problem": [
+    "A state-wide behavioral health organization needed a way to visualize their locations across the state. The existing website didn't provide an intuitive way for users to find and interact with this information."
+  ],
+  "approach": [
+    "We rebuilt the site with a focus on location visualization. Every page was evaluated by asking: does this help users find and understand the organization's mission? If not, it was rewritten, simplified, or removed.",
+    "We wrote new headline copy and narrative for each program level — language that described the actual experience of being a student there, not the institutional language the school used internally. We worked directly with department heads and current families to get the voice right.",
+    "We built a custom interactive map that allowed users to easily find and explore the organization's locations across the state, with clear information about the services offered at each location."
+  ],
+  "result": [
+    "The new site launched to positive feedback from both internal stakeholders and external users. The interactive map became a key feature, helping users easily find and understand the organization's locations and services."
+  ]
+}

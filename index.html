@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>510 Interactive — Senior Digital Problem-Solvers</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <!-- <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet"> -->
@@ -1290,7 +1289,35 @@
         'use strict';
 
         // ── DATA ─────────────────────────────────────────────────────────────────────
-        const CASE_STUDIES = [
+        // ── CONTENT STORE (populated from JSON) ───────────────────────────────────────
+        let CASE_STUDIES = [];
+        let SERVICES = [];
+        let ABOUT = { studio: {}, peter: {}, dom: {} };
+        let HOME_DATA = { hero: {}, positioning: {}, howWeWork: {} };
+
+        // ── DATA LOADER ───────────────────────────────────────────────────────────────
+        async function loadAllData() {
+            const caseStudyIds = ['university', 'nonprofit-donation', 'community-service'];
+            const [caseStudies, services, studio, peter, dom, hero, positioning, howWeWork] = await Promise.all([
+                Promise.all(caseStudyIds.map(id =>
+                    fetch('/_data/case-studies/' + id + '.json').then(r => r.json())
+                )),
+                fetch('/_data/services/services.json').then(r => r.json()),
+                fetch('/_data/about/studio.json').then(r => r.json()),
+                fetch('/_data/about/peter.json').then(r => r.json()),
+                fetch('/_data/about/dom.json').then(r => r.json()),
+                fetch('/_data/home/hero.json').then(r => r.json()),
+                fetch('/_data/home/positioning.json').then(r => r.json()),
+                fetch('/_data/home/how-we-work.json').then(r => r.json()),
+            ]);
+            CASE_STUDIES = caseStudies;
+            SERVICES = services;
+            ABOUT = { studio, peter, dom };
+            HOME_DATA = { hero, positioning, howWeWork };
+        }
+
+        // PLACEHOLDER — replaced below
+        const _CASE_STUDIES_PLACEHOLDER = [
             {
                 id: 'university',
                 sector: 'Higher Education',
@@ -1345,6 +1372,7 @@
                 ]
             }
         ];
+        // (end of placeholder — real data loaded from JSON at runtime)
 
         // ── ROUTER ────────────────────────────────────────────────────────────────────
         let currentPage = 'home';
@@ -1354,13 +1382,11 @@
             const app = document.getElementById('app');
             window.scrollTo({ top: 0, behavior: 'instant' });
 
-            // Update nav active state
             ['work', 'services', 'about', 'contact'].forEach(p => {
                 const el = document.getElementById('nav-' + p);
                 if (el) el.classList.toggle('active', p === page);
             });
 
-            // Render page
             let html = '';
             switch (page) {
                 case 'home': html = renderHome(); break;
@@ -1402,19 +1428,17 @@
             fetch('https://formspree.io/f/xvzvbjdv', {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             })
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
                     return response.json();
                 })
-                .then(data => {
+                .then(() => {
                     form.style.display = 'none';
                     document.getElementById('formSuccess').style.display = 'block';
                 })
-                .catch(error => {
+                .catch(() => {
                     submitBtn.textContent = 'Send it our way →';
                     submitBtn.disabled = false;
                     const errEl = document.getElementById('formSuccess');
@@ -1429,15 +1453,18 @@
         // ── PAGE: HOME ────────────────────────────────────────────────────────────────
         function renderHome() {
             const previewIds = ['university', 'nonprofit-donation', 'community-service'];
-            const previews = previewIds.map(id => CASE_STUDIES.find(c => c.id === id));
+            const previews = previewIds.map(id => CASE_STUDIES.find(c => c.id === id)).filter(Boolean);
+            const hero = HOME_DATA.hero;
+            const pos = HOME_DATA.positioning;
+            const how = HOME_DATA.howWeWork;
 
             return `
     <!-- HERO -->
     <section class="hero section-pad">
       <div class="container">
-        <div class="hero-eyebrow">Senior digital studio</div>
-        <h1>Built by people who've<br><em>done this before.</em></h1>
-        <p class="hero-sub">510 Interactive is a small studio with deep experience — brought in when complexity calls for clarity, and when things actually need to work.</p>
+        <div class="hero-eyebrow">${hero.eyebrow || ''}</div>
+        <h1>${hero.headline || ''}</h1>
+        <p class="hero-sub">${hero.sub || ''}</p>
         <div class="hero-actions">
           <button class="btn-primary" onclick="navigate('work')">See our work <span class="arrow">→</span></button>
           <button class="btn-secondary" onclick="navigate('contact')">Get in touch <span class="arrow">→</span></button>
@@ -1448,8 +1475,7 @@
     <!-- POSITIONING -->
     <section class="positioning">
       <div class="container">
-        <p>We've been at this a long time. Long enough to know what works, what doesn't, and how to tell the difference quickly. Our clients are <strong>mid-sized organizations</strong> — universities, health systems, nonprofits, and established companies — that need <strong>structured thinking and clean execution</strong>, not another agency selling excitement.</p>
-        <p>If your website isn't doing its job, we know how to fix it. If you're not sure what the problem is, we can figure that out too.</p>
+        ${(pos.paragraphs || []).map(p => `<p>${p}</p>`).join('')}
       </div>
     </section>
 
@@ -1509,15 +1535,11 @@
           <h2 class="section-title">Three steps. No surprises.</h2>
         </div>
         <div class="how-grid">
-          ${[
-                    ['01', 'Understand the problem', "We start by asking the right questions. Who uses this? What isn't working? What's already been tried? This phase is shorter than clients expect — and more valuable."],
-                    ['02', 'Bring structure', "Before anything is designed or built, we map the right approach: content hierarchy, user flows, navigation, technical requirements. This is where complexity gets organized."],
-                    ['03', 'Execute cleanly', "We build, test, and deliver. We stay in close contact throughout and involve you at decision points, not just at milestones. Nothing arrives as a surprise."],
-                ].map(([num, title, desc]) => `
+          ${(how.steps || []).map(step => `
             <div class="how-step">
-              <div class="how-num">${num}</div>
-              <h3>${title}</h3>
-              <p>${desc}</p>
+              <div class="how-num">${step.num}</div>
+              <h3>${step.title}</h3>
+              <p>${step.desc}</p>
             </div>
           `).join('')}
         </div>
@@ -1612,32 +1634,7 @@
 
         // ── PAGE: SERVICES ────────────────────────────────────────────────────────────
         function renderServices() {
-            const services = [
-                {
-                    label: 'Digital Strategy & UX',
-                    title: 'Digital Strategy & UX',
-                    desc: "We help organizations understand what their digital presence should actually do — and who it should serve. Before anything is designed or built, we make sure the right questions have been asked and answered.",
-                    tags: ['Content audits', 'User research', 'Information architecture', 'Site mapping', 'User journey mapping', 'Stakeholder workshops', 'Digital communications planning']
-                },
-                {
-                    label: 'Website Design & Development',
-                    title: 'Website Design & Development',
-                    desc: "We design and build websites that are clear, usable, and maintainable. We work in standard platforms — Webflow, WordPress, and custom builds — and prioritize long-term sustainability over launch-day novelty. Accessibility and performance are standard, not add-ons.",
-                    tags: ['Full site design & build', 'CMS setup & training', 'Accessibility review (WCAG 2.1 AA)', 'Performance optimization', 'Platform migration', 'Staff training & documentation']
-                },
-                {
-                    label: 'Content & Structure',
-                    title: 'Content & Structure',
-                    desc: "Many website problems are content problems. We write, edit, and organize digital content — particularly for organizations with complex information, multiple audiences, or years of accumulated material that hasn't been reviewed.",
-                    tags: ['Copywriting & editing', 'Plain-language rewriting', 'Content strategy', 'Taxonomy & labeling', 'Content governance planning', 'Style guides']
-                },
-                {
-                    label: 'Ongoing Support',
-                    title: 'Ongoing Support',
-                    desc: "We stay involved with clients whose digital needs evolve over time. This might mean quarterly strategic reviews, on-call support for updates, or a retainer arrangement for ongoing work. We don't disappear after launch.",
-                    tags: ['Maintenance & updates', 'Periodic UX reviews', 'Staff training', 'Strategic check-ins', 'Technical support']
-                }
-            ];
+            const services = SERVICES;
 
             return `
     <div class="page-header">
@@ -1673,6 +1670,9 @@
 
         // ── PAGE: ABOUT ───────────────────────────────────────────────────────────────
         function renderAbout() {
+            const studio = ABOUT.studio;
+            const peter = ABOUT.peter;
+            const dom = ABOUT.dom;
             return `
     <div class="page-header">
       <div class="container">
@@ -1681,29 +1681,25 @@
       </div>
     </div>
     <div class="container section-pad">
-      <p class="about-intro">510 Interactive is Peter and Dom. Two people who have spent most of their careers figuring out how digital things should work — and how to make them work better. <strong>We've been doing this, in various combinations, for over twenty years.</strong> We're not building an agency. We're building good work for clients who deserve it.</p>
-      <p class="about-intro">Most of our projects involve both of us at different stages. Peter leads technical architecture and build. Dom leads strategy and content direction. We've worked together long enough that handoffs are smooth and the left hand always knows what the right hand is doing. When you work with 510, <strong>you deal directly with the people doing the work</strong> — not an account manager.</p>
+      ${(studio.intro || []).map(p => `<p class="about-intro">${p}</p>`).join('')}
 
       <div class="bio-grid">
         <div class="bio">
-          <div class="bio-label">Peter</div>
-          <h2>Peter</h2>
-          <div class="bio-role">Technical Lead</div>
-          <p>Peter has spent two decades building digital systems for organizations that can't afford to get it wrong. His background covers web development, content management platforms, and systems architecture — with deep experience across higher education, healthcare, and government.</p>
-          <p>He doesn't over-engineer. He doesn't cut corners. He builds things that work, and that can be managed without him once they're live. Clients who've worked with Peter tend to come back — not because they have problems, but because they trust him to solve the next thing efficiently.</p>
+          <div class="bio-label">${peter.name || 'Peter'}</div>
+          <h2>${peter.name || 'Peter'}</h2>
+          <div class="bio-role">${peter.role || ''}</div>
+          ${(peter.paragraphs || []).map(p => `<p>${p}</p>`).join('')}
         </div>
         <div class="bio">
-          <div class="bio-label">Dom</div>
-          <h2>Dom</h2>
-          <div class="bio-role">Creative Direction & Strategy</div>
-          <p>Dom's background is in strategy, content, and creative direction. He's helped organizations of all sizes figure out what they're saying, who they're saying it to, and how to structure information so that people can actually find and use it.</p>
-          <p>He's spent significant time inside organizations going through digital transitions — which means he understands how to work with internal teams, stakeholders, and leadership, not just design clients. He knows how decisions get made inside institutions, and how to navigate that without slowing the project down.</p>
+          <div class="bio-label">${dom.name || 'Dom'}</div>
+          <h2>${dom.name || 'Dom'}</h2>
+          <div class="bio-role">${dom.role || ''}</div>
+          ${(dom.paragraphs || []).map(p => `<p>${p}</p>`).join('')}
         </div>
       </div>
 
       <div class="about-note">
-        <p>We take on a limited number of projects so that every client gets real attention. <strong>We're direct about what we can and can't do,</strong> and we'll tell you honestly if your project needs something outside our wheelhouse.</p>
-        <p>Many of our client relationships extend well beyond a single project. That's not a pitch — it's just what tends to happen when things go well and people trust each other.</p>
+        ${(studio.note || []).map(p => `<p>${p}</p>`).join('')}
       </div>
 
       <div style="margin-top: 3rem">
@@ -1774,7 +1770,15 @@
         }
 
         // ── INIT ──────────────────────────────────────────────────────────────────────
-        navigate('home');
+        (async () => {
+            document.getElementById('app').innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:40vh;color:var(--muted);font-size:0.9rem;">Loading…</div>';
+            try {
+                await loadAllData();
+            } catch (e) {
+                console.error('Failed to load content data:', e);
+            }
+            navigate('home');
+        })();
     </script>
 </body>
 

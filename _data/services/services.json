@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Digital Strategy & UX",
+    "title": "Digital Strategy & UX",
+    "desc": "We help organizations understand what their digital presence should actually do — and who it should serve. Before anything is designed or built, we make sure the right questions have been asked and answered.",
+    "tags": ["Content audits", "User research", "Information architecture", "Site mapping", "User journey mapping", "Stakeholder workshops", "Digital communications planning"]
+  },
+  {
+    "label": "Website Design & Development",
+    "title": "Website Design & Development",
+    "desc": "We design and build websites that are clear, usable, and maintainable. We work in standard platforms — Webflow, WordPress, and custom builds — and prioritize long-term sustainability over launch-day novelty. Accessibility and performance are standard, not add-ons.",
+    "tags": ["Full site design & build", "CMS setup & training", "Accessibility review (WCAG 2.1 AA)", "Performance optimization", "Platform migration", "Staff training & documentation"]
+  },
+  {
+    "label": "Content & Structure",
+    "title": "Content & Structure",
+    "desc": "Many website problems are content problems. We write, edit, and organize digital content — particularly for organizations with complex information, multiple audiences, or years of accumulated material that hasn't been reviewed.",
+    "tags": ["Copywriting & editing", "Plain-language rewriting", "Content strategy", "Taxonomy & labeling", "Content governance planning", "Style guides"]
+  },
+  {
+    "label": "Ongoing Support",
+    "title": "Ongoing Support",
+    "desc": "We stay involved with clients whose digital needs evolve over time. This might mean quarterly strategic reviews, on-call support for updates, or a retainer arrangement for ongoing work. We don't disappear after launch.",
+    "tags": ["Maintenance & updates", "Periodic UX reviews", "Staff training", "Strategic check-ins", "Technical support"]
+  }
+]

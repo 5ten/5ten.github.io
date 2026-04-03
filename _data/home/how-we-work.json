@@ -1,0 +1,19 @@
+{
+  "steps": [
+    {
+      "num": "01",
+      "title": "Understand the problem",
+      "desc": "We start by asking the right questions. Who uses this? What isn't working? What's already been tried? This phase is shorter than clients expect — and more valuable."
+    },
+    {
+      "num": "02",
+      "title": "Bring structure",
+      "desc": "Before anything is designed or built, we map the right approach: content hierarchy, user flows, navigation, technical requirements. This is where complexity gets organized."
+    },
+    {
+      "num": "03",
+      "title": "Execute cleanly",
+      "desc": "We build, test, and deliver. We stay in close contact throughout and involve you at decision points, not just at milestones. Nothing arrives as a surprise."
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+backend:
+  name: github
+  repo: 5ten/5ten.github.io
+  branch: master
+  base_url: https://5ten.netlify.app  # OAuth proxy — see setup instructions
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+
+  # ── CASE STUDIES ──────────────────────────────────────────────────────────────
+  - name: "case_studies"
+    label: "Case Studies"
+    folder: "_data/case-studies"
+    create: true
+    slug: "{{id}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "ID (URL slug, no spaces)", name: "id", widget: "string", hint: "e.g. university or nonprofit-donation" }
+      - { label: "Sector / Category", name: "sector", widget: "string", hint: "e.g. Higher Education, Nonprofit" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Summary (card teaser)", name: "summary", widget: "text" }
+      - label: "The Problem"
+        name: "problem"
+        widget: "list"
+        field: { label: "Paragraph", name: "paragraph", widget: "text" }
+      - label: "Our Approach"
+        name: "approach"
+        widget: "list"
+        field: { label: "Paragraph", name: "paragraph", widget: "text" }
+      - label: "The Result"
+        name: "result"
+        widget: "list"
+        field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+  # ── SERVICES ──────────────────────────────────────────────────────────────────
+  - name: "services"
+    label: "Services"
+    folder: "_data/services"
+    create: true
+    slug: "{{label}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Label (nav / heading)", name: "label", widget: "string" }
+      - { label: "Description", name: "desc", widget: "text" }
+      - label: "Includes (tags)"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
+
+  # ── ABOUT / BIOS ──────────────────────────────────────────────────────────────
+  - name: "about"
+    label: "About"
+    files:
+
+      - label: "Studio Introduction"
+        name: "studio"
+        file: "_data/about/studio.json"
+        format: "json"
+        fields:
+          - label: "Intro paragraphs"
+            name: "intro"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Closing note paragraphs"
+            name: "note"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+      - label: "Peter — Bio"
+        name: "peter"
+        file: "_data/about/peter.json"
+        format: "json"
+        fields:
+          - { label: "Name", name: "name", widget: "string", default: "Peter" }
+          - { label: "Role", name: "role", widget: "string", default: "Technical Lead" }
+          - label: "Bio paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+      - label: "Dom — Bio"
+        name: "dom"
+        file: "_data/about/dom.json"
+        format: "json"
+        fields:
+          - { label: "Name", name: "name", widget: "string", default: "Dom" }
+          - { label: "Role", name: "role", widget: "string", default: "Creative Direction & Strategy" }
+          - label: "Bio paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+
+  # ── HOME PAGE ─────────────────────────────────────────────────────────────────
+  - name: "home"
+    label: "Home Page"
+    files:
+
+      - label: "Hero"
+        name: "hero"
+        file: "_data/home/hero.json"
+        format: "json"
+        fields:
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Headline (HTML ok for <em>)", name: "headline", widget: "string" }
+          - { label: "Subheading", name: "sub", widget: "text" }
+
+      - label: "Positioning Strip"
+        name: "positioning"
+        file: "_data/home/positioning.json"
+        format: "json"
+        fields:
+          - label: "Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph (HTML ok for <strong>)", name: "paragraph", widget: "text" }
+
+      - label: "How We Work Steps"
+        name: "how_we_work"
+        file: "_data/home/how-we-work.json"
+        format: "json"
+        fields:
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "num", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
