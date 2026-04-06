@@ -44,34 +44,29 @@ collections:
         field: { label: "Paragraph", name: "paragraph", widget: "text" }
 
   # ── SERVICES ──────────────────────────────────────────────────────────────────
-  - name: "services"
-    label: "Services"
+  - name: "services_setup"
+    label: "Services Page"
     files:
       - file: "data/services/services.json"
-        format: "json"
-        label: "Services"
-        name: "services"
+        label: "Service Data"
+        name: "service_data" # Changed from 'services' to avoid conflict
         fields:
-          - label: "Services"
-            name: "services"
+          - label: "Service List"
+            name: "services" # This is the key that will appear in your JSON
             widget: "list"
-            fields:
-              - label: "Service List"
-                name: "service_list"
+            label_singular: "Service"
+            summary: "{{label}}" 
+            fields: 
+              - label: "Label (nav / heading)"
+                name: "label"
+                widget: "string"
+              - label: "Description"
+                name: "desc"
+                widget: "string"
+              - label: "Includes (tags)"
+                name: "tags"
                 widget: "list"
-                # 1. Remove the "object" widget here. 
-                # 2. Put the sub-fields directly under 'fields' for the list.
-                fields: 
-                  - label: "Label (nav / heading)"
-                    name: "label"
-                    widget: "string"
-                  - label: "Description"
-                    name: "desc"
-                    widget: "string"
-                  - label: "Includes (tags)"
-                    name: "tags"
-                    widget: "list"
-                    field: { label: "Tag", name: "tag", widget: "string" }
+                field: { label: "Tag", name: "tag", widget: "string" }
 
 
   # ── ABOUT / BIOS ──────────────────────────────────────────────────────────────
