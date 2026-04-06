@@ -41,7 +41,6 @@ collections:
     slug: "{{label}}"
     extension: "json"
     format: "json"
-    widget: "list"
     files: 
       - file: "data/services/services.json"
         label: "Services"
