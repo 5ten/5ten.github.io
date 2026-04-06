@@ -37,16 +37,17 @@ collections:
   # ── SERVICES ──────────────────────────────────────────────────────────────────
   - name: "services"
     label: "Services"
-    file: "data/services/services.json"
     create: true
     slug: "{{label}}"
     extension: "json"
     format: "json"
     widget: "list"
-    fields:
-      - { label: "Label (nav / heading)", name: "label", widget: "string" }
-      - { label: "Description", name: "desc", widget: "list" }
-      - { label: "Includes (tags)", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+    files: 
+      - file: "data/services/services.json"
+        fields:
+        - { label: "Label (nav / heading)", name: "label", widget: "string" }
+        - { label: "Description", name: "desc", widget: "list" }
+        - { label: "Includes (tags)", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
 
   # ── ABOUT / BIOS ──────────────────────────────────────────────────────────────
   - name: "about"
