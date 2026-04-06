@@ -49,7 +49,7 @@ collections:
         widget: "list"
         fields:
         - { label: "Label (nav / heading)", name: "label", widget: "string" }
-        - { label: "Description", name: "desc", widget: "list" }
+        - { label: "Description", name: "desc", widget: "string" }
         - { label: "Includes (tags)", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
 
   # ── ABOUT / BIOS ──────────────────────────────────────────────────────────────
