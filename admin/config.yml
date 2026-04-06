@@ -37,12 +37,9 @@ collections:
   # ── SERVICES ──────────────────────────────────────────────────────────────────
   - name: "services"
     label: "Services"
-    create: false
-    slug: "{{label}}"
-    extension: "json"
-    format: "json"
     files: 
       - file: "data/services/services.json"
+        format: "json"
         label: "Services"
         name: "services"
         widget: "list"
