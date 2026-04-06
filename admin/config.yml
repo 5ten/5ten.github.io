@@ -55,7 +55,7 @@ collections:
             name: "services" # This is the key that will appear in your JSON
             widget: "list"
             label_singular: "Service"
-            summary: "{{label}}" 
+            summary: "{{label}}"
             fields: 
               - label: "Label (nav / heading)"
                 name: "label"
