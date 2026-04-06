@@ -51,7 +51,7 @@ collections:
         format: "json"
         label: "Services"
         name: "services"
-        field:
+        fields:
           - label: "Service"
             name: "service"
             widget: "list"
