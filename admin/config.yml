@@ -45,7 +45,7 @@ collections:
 
   # ── SERVICES ──────────────────────────────────────────────────────────────────
   - name: "services_setup"
-    label: "Services Page"
+    label: "Services"
     files:
       - file: "data/services/services.json"
         label: "Service Data"
