@@ -42,6 +42,8 @@ collections:
         format: "json"
         label: "Services"
         name: "services"
+        summary: '{{fields.service}} - {{fields.service.label}}'
+
         fields:
         - label: "Service"
           name: "service"
