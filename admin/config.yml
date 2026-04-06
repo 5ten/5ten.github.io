@@ -42,6 +42,11 @@ collections:
         name: "result"
         widget: "list"
         field: { label: "Paragraph", name: "paragraph", widget: "text" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        field: { label: "Image", name: "image", widget: "image" }
+
 
   # ── SERVICES ──────────────────────────────────────────────────────────────────
   - name: "services_setup"
