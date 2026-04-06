@@ -51,11 +51,11 @@ collections:
         format: "json"
         label: "Services"
         name: "services"
-        field:
+        fields:
           - label: "Services"
             name: "services"
             widget: "object"
-            field:
+            fields:
               - label: "Service"
                 name: "service"
                 widget: "list"
