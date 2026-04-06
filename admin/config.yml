@@ -37,13 +37,16 @@ collections:
   # ── SERVICES ──────────────────────────────────────────────────────────────────
   - name: "services"
     label: "Services"
-    create: true
+    create: false
     slug: "{{label}}"
     extension: "json"
     format: "json"
     widget: "list"
     files: 
       - file: "data/services/services.json"
+        label: "Services"
+        name: "services"
+        widget: "list"
         fields:
         - { label: "Label (nav / heading)", name: "label", widget: "string" }
         - { label: "Description", name: "desc", widget: "list" }
