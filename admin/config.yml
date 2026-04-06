@@ -37,7 +37,7 @@ collections:
   # ── SERVICES ──────────────────────────────────────────────────────────────────
   - name: "services"
     label: "Services"
-    folder: "data/services/services.json"
+    file: "data/services/services.json"
     create: true
     slug: "{{label}}"
     extension: "json"
