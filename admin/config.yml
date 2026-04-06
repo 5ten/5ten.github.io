@@ -56,20 +56,24 @@ collections:
           name: "services"
           widget: "object"
           fields:
-          - label: "Service"
-            name: "service"
+          - label: "Service List"
+            name: "service_list"
             widget: "list"
-            fields:
-            - label: "Label (nav / heading)"
-              name: "label"
-              widget: "string"
-            - label: "Description"
-              name: "desc"
-              widget: "string"
-            - label: "Includes (tags)"
-              name: "tags"
-              widget: "list"
-              field: { label: "Tag", name: "tag", widget: "string" }
+            field: 
+            - label: "Service"
+              name: "service"
+              widget: "object"
+              fields:
+              - label: "Label (nav / heading)"
+                name: "label"
+                widget: "string"
+              - label: "Description"
+                name: "desc"
+                widget: "string"
+              - label: "Includes (tags)"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
 
   # ── ABOUT / BIOS ──────────────────────────────────────────────────────────────
   - name: "about"
