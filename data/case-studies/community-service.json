@@ -14,5 +14,9 @@
   "result": [
     "The new site launched to positive feedback from both internal stakeholders and external users. The interactive map became a key feature, helping users easily find and understand the organization's locations and services."
   ],
-  "images": []
+  "images": [
+    "/uploads/cw1.jpg",
+    "/uploads/cw2.jpg",
+    "/uploads/cw3.jpg"
+  ]
 }
