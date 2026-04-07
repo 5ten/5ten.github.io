@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>510 Interactive — Senior Digital Problem-Solvers</title>
     <script src="//use.typekit.net/sda2jfw.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.1.8/venobox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.1.8/venobox.css"
+        integrity="sha512-UjYHRtLJUrbgyFmRQoounxMKKUS/bnvKt0YO0VUEWwZzJvh1KF2EGQmTobRsN/7ZUGGzCdKvozYcuHUvxK0ldA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         /* ── RESET & BASE ─────────────────────────────────────────────────────────── */
         *,
@@ -72,6 +76,7 @@
             max-width: var(--max-w);
             margin: 0 auto;
             padding: 0 var(--px);
+            position: relative;
         }
 
         .section-pad {
@@ -753,6 +758,28 @@
             max-width: 680px;
         }
 
+        .cs-images {
+            /* position: absolute;
+            right: 0;
+            top: 0;
+            width: calc(var(--max-w) / 4); */
+        }
+
+        .cs-images img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        }
+        .cs-images a:nth-child(2) img {
+            width: 48%;
+            margin-right: 2%;
+        }
+        .cs-images a:nth-child(3) img {
+            width: 48%;
+            margin-left: 2%;
+        }
         .cs-section {
             margin-bottom: 3.5rem;
         }
@@ -1231,6 +1258,11 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .vbox-child {
+            border-radius: 15px;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -1399,6 +1431,13 @@
             }
 
             app.innerHTML = '<div class="page">' + html + '</div>';
+            new VenoBox({
+                selector: ".lightbox",
+                spinner: 'wave',
+                titleattr: 'data-caption',
+                titlePosition: 'bottom'
+            });
+
         }
 
         // Scroll listener for nav shadow
@@ -1594,6 +1633,7 @@
             const idx = CASE_STUDIES.findIndex(c => c.id === cs.id);
             const prev = CASE_STUDIES[idx - 1];
             const next = CASE_STUDIES[idx + 1];
+            const images = cs.images || [];
 
             return `
     <div class="cs-detail-header">
@@ -1618,6 +1658,9 @@
           <div class="cs-section">
             <div class="cs-section-label">The Result</div>
             ${cs.result.map(p => `<p>${p}</p>`).join('')}
+          </div>
+          <div class="cs-images">
+            ${images?.map(img => `<a href="${img}" class="lightbox" data-gall="cs-gallery"><img src="${img}" alt="${cs?.title} image"></a>`).join('')}
           </div>
           <div class="cs-nav">
             ${prev ? `<button class="cs-nav-btn" onclick="navigate('case-study','${prev.id}')">← ${prev.title}</button>` : ''}
